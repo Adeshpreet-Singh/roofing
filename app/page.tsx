@@ -76,18 +76,9 @@ for life.
               </div>
             </div>
             <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-red-400">Licensed</div>
-              <div className="text-sm text-stone-400 mt-1">& insured</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-red-400">25yr</div>
-              <div className="text-sm text-stone-400 mt-1">Warranties</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-red-400">10K+</div>
-              <div className="text-sm text-stone-400 mt-1">Roofs done</div>
-            </div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-red-400">Licensed</div><div className="text-sm text-stone-400 mt-1">& insured</div></div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-red-400">25yr</div><div className="text-sm text-stone-400 mt-1">Warranties</div></div>
+            <div className="text-center"><div className="text-3xl md:text-4xl font-bold text-red-400">10K+</div><div className="text-sm text-stone-400 mt-1">Roofs done</div></div>
             </div>
           </div>
         </section>
@@ -99,36 +90,30 @@ for life.
               <h2 id="services-heading" className="text-4xl md:text-5xl font-bold">Our Services</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🏠</div>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🏠</div>
               <h3 className="text-xl font-bold mb-3 text-stone-100">Roof Replacement</h3>
-              <p className="text-stone-400 leading-relaxed">Asphalt, metal, tile, flat.</p>
-            </article>
-            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🔧</div>
+              <p className="text-stone-400 leading-relaxed">Asphalt, metal, tile, flat.</p></article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🔧</div>
               <h3 className="text-xl font-bold mb-3 text-stone-100">Roof Repair</h3>
-              <p className="text-stone-400 leading-relaxed">Leak repair, storm damage.</p>
-            </article>
-            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🔍</div>
+              <p className="text-stone-400 leading-relaxed">Leak repair, storm damage.</p></article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🔍</div>
               <h3 className="text-xl font-bold mb-3 text-stone-100">Inspection</h3>
-              <p className="text-stone-400 leading-relaxed">Comprehensive roof assessment.</p>
-            </article>
-            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🌧️</div>
+              <p className="text-stone-400 leading-relaxed">Comprehensive roof assessment.</p></article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🌧️</div>
               <h3 className="text-xl font-bold mb-3 text-stone-100">Gutters</h3>
-              <p className="text-stone-400 leading-relaxed">Installation and cleaning.</p>
-            </article>
-            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">🏢</div>
+              <p className="text-stone-400 leading-relaxed">Installation and cleaning.</p></article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">🏢</div>
               <h3 className="text-xl font-bold mb-3 text-stone-100">Commercial</h3>
-              <p className="text-stone-400 leading-relaxed">Flat and low-slope roofing.</p>
-            </article>
-            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-4" aria-hidden="true">⛈️</div>
+              <p className="text-stone-400 leading-relaxed">Flat and low-slope roofing.</p></article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-4xl mb-4">⛈️</div>
               <h3 className="text-xl font-bold mb-3 text-stone-100">Storm Damage</h3>
-              <p className="text-stone-400 leading-relaxed">Insurance claim assistance.</p>
-            </article>
+              <p className="text-stone-400 leading-relaxed">Insurance claim assistance.</p></article>
             </div>
           </div>
         </section>
@@ -142,28 +127,16 @@ for life.
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">TH</div>
-              <h3 className="font-bold text-stone-100">Tom Henderson</h3>
-              <p className="text-sm text-red-400">Owner</p>
-              <p className="text-sm text-stone-400 mt-1">Licensed 20yr</p>
-            </div>
+              <h3 className="font-bold text-stone-100">Tom Henderson</h3><p className="text-sm text-red-400">Owner</p><p className="text-sm text-stone-400 mt-1">Licensed 20yr</p></div>
             <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">CM</div>
-              <h3 className="font-bold text-stone-100">Carlos Mendez</h3>
-              <p className="text-sm text-red-400">Production Mgr</p>
-              <p className="text-sm text-stone-400 mt-1">HAAG certified</p>
-            </div>
+              <h3 className="font-bold text-stone-100">Carlos Mendez</h3><p className="text-sm text-red-400">Production Mgr</p><p className="text-sm text-stone-400 mt-1">HAAG certified</p></div>
             <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">SW</div>
-              <h3 className="font-bold text-stone-100">Sarah Walsh</h3>
-              <p className="text-sm text-red-400">Project Coordinator</p>
-              <p className="text-sm text-stone-400 mt-1">Insurance specialist</p>
-            </div>
+              <h3 className="font-bold text-stone-100">Sarah Walsh</h3><p className="text-sm text-red-400">Project Coordinator</p><p className="text-sm text-stone-400 mt-1">Insurance specialist</p></div>
             <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
               <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">JK</div>
-              <h3 className="font-bold text-stone-100">James Kim</h3>
-              <p className="text-sm text-red-400">Commercial Lead</p>
-              <p className="text-sm text-stone-400 mt-1">Flat roof expert</p>
-            </div>
+              <h3 className="font-bold text-stone-100">James Kim</h3><p className="text-sm text-red-400">Commercial Lead</p><p className="text-sm text-stone-400 mt-1">Flat roof expert</p></div>
             </div>
           </div>
         </section>
@@ -176,26 +149,14 @@ for life.
             </div>
             <div className="space-y-4">
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-stone-100">
-                Free inspection?
-                <span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-stone-400 text-sm leading-relaxed">Yes, full inspection and estimate free.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-stone-100">Free inspection?<span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-stone-400 text-sm leading-relaxed">Yes, full inspection and estimate free.</p></details>
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-stone-100">
-                Insurance?
-                <span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-stone-400 text-sm leading-relaxed">We work directly with your insurance company.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-stone-100">Insurance?<span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-stone-400 text-sm leading-relaxed">We work directly with your insurance company.</p></details>
             <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
-              <summary className="font-medium flex justify-between items-center list-none text-stone-100">
-                Warranty?
-                <span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span>
-              </summary>
-              <p className="mt-3 text-stone-400 text-sm leading-relaxed">25-year workmanship warranty on all new roofs.</p>
-            </details>
+              <summary className="font-medium flex justify-between items-center list-none text-stone-100">Warranty?<span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span></summary>
+              <p className="mt-3 text-stone-400 text-sm leading-relaxed">25-year workmanship warranty on all new roofs.</p></details>
             </div>
           </div>
         </section>
@@ -207,18 +168,9 @@ for life.
                 <p className="text-red-400 text-sm tracking-widest uppercase mb-3">Get In Touch</p>
                 <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Free Inspection</h2>
                 <div className="space-y-6 text-stone-400">
-                  <div>
-                    <div className="font-bold text-stone-100">Phone</div>
-                    <a href="tel:(555) 890-1237" className="hover:text-red-400 transition-colors">(555) 890-1237</a>
-                  </div>
-                  <div>
-                    <div className="font-bold text-stone-100">Address</div>
-                    <p className="whitespace-pre-line">Serving Metro Denver, CO</p>
-                  </div>
-                  <div>
-                    <div className="font-bold text-stone-100">Hours</div>
-                    <p>Mon–Sat 7 AM – 6 PM</p>
-                  </div>
+                  <div><div className="font-bold text-stone-100">Phone</div><a href="tel:(555) 890-1237" className="hover:text-red-400">(555) 890-1237</a></div>
+                  <div><div className="font-bold text-stone-100">Address</div><p>Serving Metro Denver, CO</p></div>
+                  <div><div className="font-bold text-stone-100">Hours</div><p>Mon–Sat 7 AM – 6 PM</p></div>
                 </div>
               </div>
               <div>
