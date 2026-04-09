@@ -6,295 +6,255 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) { element.scrollIntoView({ behavior: 'smooth' }); element.focus(); }
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false);
   };
 
-  const services = [
-    { title: 'Roof Inspection', desc: 'Comprehensive assessment using drone technology and thermal imaging to detect hidden damage.', price: 'Free', icon: '🔍' },
-    { title: 'Roof Repair', desc: 'Leak repair, shingle replacement, flashing fixes, and storm damage restoration.', price: 'From $299', icon: '🔧' },
-    { title: 'Full Replacement', desc: 'Complete tear-off and installation with premium materials. 50-year warranty available.', price: 'From $8,999', icon: '🏠' },
-    { title: 'Emergency Tarp', desc: '24/7 emergency response for storm damage. Temporary protection within 2 hours.', price: 'From $399', icon: '🚨' },
-    { title: 'Gutter Systems', desc: 'Seamless gutter installation, cleaning, and leaf guard systems.', price: 'From $599', icon: '🏗️' },
-    { title: 'Commercial Roofing', desc: 'Flat roof systems, TPO, EPDM, and commercial maintenance programs.', price: 'Custom Quote', icon: '🏢' },
-  ];
-
-  const testimonials = [
-    { name: 'Thomas Baker', role: 'Homeowner', text: 'Skyline replaced our 25-year-old roof in just 2 days. The crew was clean, professional, and the final result exceeded expectations. Our home value increased immediately.', rating: 5 },
-    { name: 'Patricia Nguyen', role: 'Property Developer', text: 'We use Skyline for all our development projects. Their pricing is competitive, their work is impeccable, and they always finish on schedule. Highly recommend.', rating: 5 },
-    { name: 'Michael Torres', role: 'Restaurant Owner', text: 'Had a major leak during a storm at 2 AM. Skyline had a crew there within 90 minutes with emergency tarps. They saved our kitchen and dining area from major damage.', rating: 5 },
-  ];
-
   return (
-    <div className="min-h-screen">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neon text-dark px-4 py-2 rounded-lg z-[100] focus-visible:outline-2 focus-visible:outline-white font-bold">Skip to main content</a>
+    <div className="min-h-screen bg-stone-950 text-stone-100">
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-red-400 text-black px-4 py-2 rounded z-[100] font-bold">
+        Skip to main content
+      </a>
 
       <header>
-        <nav role="navigation" aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 glass">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-neon/20 rounded-xl flex items-center justify-center text-neon text-xl neon-glow" aria-hidden="true">🏠</div>
-              <div><h1 className="text-lg font-bold text-white">Skyline</h1><p className="text-[9px] text-neon tracking-widest">ROOFING</p></div>
+        <nav role="navigation" aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 bg-stone-950/95 backdrop-blur-md border-b border-current/10">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+              <h1 className="text-xl tracking-tight font-bold">Peak Roofing</h1>
+              <p className="text-xs text-stone-400 tracking-wider uppercase">Est. 2007</p>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              {['Services','About','Reviews','Contact'].map(item => (<button key={item} onClick={() => scrollToSection(item.toLowerCase())} aria-label={`Navigate to ${item} section`} className="text-sm text-slate-text hover:text-neon transition-colors focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2 rounded">{item}</button>))}
-              <button aria-label="Get a free roof inspection" className="bg-neon text-dark px-6 py-2.5 rounded-full text-sm font-bold hover:bg-neon-dim transition-colors focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2">Free Inspection</button>
+              <button onClick={() => scrollTo('services')} className="text-sm text-stone-400 hover:text-red-400 transition-colors">Services</button>
+              <button onClick={() => scrollTo('team')} className="text-sm text-stone-400 hover:text-red-400 transition-colors">Team</button>
+              <button onClick={() => scrollTo('faq')} className="text-sm text-stone-400 hover:text-red-400 transition-colors">FAQ</button>
+              <button onClick={() => scrollTo('contact')} className="text-sm text-stone-400 hover:text-red-400 transition-colors">Contact</button>
+              <button onClick={() => scrollTo('contact')} className="bg-red-400 text-black px-6 py-2.5 text-sm font-medium rounded-full hover:opacity-90 transition-opacity">
+                Free Inspection
+              </button>
             </div>
-            <button aria-label={menuOpen?"Close menu":"Open menu"} aria-expanded={menuOpen} className="md:hidden text-neon focus-visible:outline-2 focus-visible:outline-neon rounded" onClick={() => setMenuOpen(!menuOpen)}>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{menuOpen?<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>:<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>}</svg>
+            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen}>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
           {menuOpen && (
-            <div className="md:hidden glass border-t border-dark-border px-6 py-4 space-y-4">
-              {['Services','About','Reviews','Contact'].map(item => (<button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="block w-full text-left text-slate-text hover:text-neon py-2">{item}</button>))}
-              <button className="w-full bg-neon text-dark px-6 py-3 rounded-full font-bold">Free Inspection</button>
+            <div className="md:hidden bg-stone-950 border-t border-current/10 px-6 py-4 space-y-1">
+              <button onClick={() => scrollTo('services')} className="block w-full text-left px-4 py-3 text-stone-400 hover:text-red-400">Services</button>
+              <button onClick={() => scrollTo('team')} className="block w-full text-left px-4 py-3 text-stone-400 hover:text-red-400">Team</button>
+              <button onClick={() => scrollTo('faq')} className="block w-full text-left px-4 py-3 text-stone-400 hover:text-red-400">FAQ</button>
+              <button onClick={() => scrollTo('contact')} className="block w-full text-left px-4 py-3 text-stone-400 hover:text-red-400">Contact</button>
             </div>
           )}
         </nav>
       </header>
 
-      
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{__html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Roofing",
-            "url": "https://roofing.com",
-            "description": "Professional roofing services.",
-          })}}
-        />
-
-        <main id="main-content" role="main">
-        <section aria-labelledby="hero-heading" className="pt-24 pb-16 relative overflow-hidden grid-bg">
-          <div className="absolute inset-0" aria-hidden="true">
-            <div className="absolute top-20 right-20 w-96 h-96 bg-neon/10 rounded-full blur-[120px]"/>
-            <div className="absolute bottom-20 left-20 w-64 h-64 bg-neon/5 rounded-full blur-[100px]"/>
-          </div>
-          <div className="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-neon text-sm font-bold tracking-widest mb-4 animate-fade-in-up">LICENSED ROOFING CONTRACTORS</p>
-              <h2 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white animate-fade-in-up stagger-1">Protecting What<br/><span className="text-neon neon-text">Matters Most.</span></h2>
-              <p className="text-xl text-slate-text mb-8 max-w-lg animate-fade-in-up stagger-2">Expert roofing services backed by 50-year warranties. From inspections to complete replacements, we&apos;ve got you covered.</p>
-              <div className="flex flex-wrap gap-4 mb-10 animate-fade-in-up stagger-3">
-                <button aria-label="Get your free roof inspection" className="bg-neon text-dark px-8 py-4 rounded-full text-lg font-bold hover:bg-neon-dim transition-all hover:scale-105 neon-glow focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2">Free Inspection</button>
-                <button aria-label="Call for emergency roofing" className="border-2 border-neon/50 text-neon px-8 py-4 rounded-full text-lg font-bold hover:bg-neon/10 transition-all hover:scale-105 focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2">Emergency: 24/7</button>
-              </div>
-              <div className="flex items-center gap-8">
-                {[{num:'8K+',label:'Roofs Installed'},{num:'50-Year',label:'Warranty'},{num:'24/7',label:'Emergency'}].map((s,i) => (<div key={i}><div className="text-2xl font-bold text-neon">{s.num}</div><div className="text-sm text-slate-text">{s.label}</div></div>))}
+      <main id="main" role="main">
+        <section className="pt-28 pb-20 md:pb-32">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-3xl">
+              <p className="text-red-400 text-sm tracking-widest uppercase mb-6">Est. 2007</p>
+              <h2 className="text-5xl md:text-7xl font-bold leading-[0.9] tracking-tight mb-8 whitespace-pre-line">
+                Covered
+for life.
+              </h2>
+              <p className="text-xl text-stone-400 max-w-xl leading-relaxed mb-10">
+                Expert roofing installation, repair, and inspection. Licensed, insured, and backed by industry-leading warranties.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <button onClick={() => scrollTo('contact')} className="bg-red-400 text-black px-8 py-4 text-lg font-medium rounded-full hover:opacity-90 transition-opacity">
+                  Free Inspection
+                </button>
+                <button onClick={() => scrollTo('services')} className="border-2 border-current/20 px-8 py-4 text-lg font-medium rounded-full hover:bg-current/5 transition-colors">
+                  Our Work
+                </button>
               </div>
             </div>
-            <div className="relative">
-              <div className="glass rounded-3xl p-8 neon-glow">
-                <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=600&q=80" alt="Professional roofing work on a residential home" className="w-full rounded-2xl opacity-90"/>
-              </div>
+            <div className="mt-16 grid grid-cols-3 gap-8 max-w-lg">
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-red-400">Licensed</div>
+              <div className="text-sm text-stone-400 mt-1">& insured</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-red-400">25yr</div>
+              <div className="text-sm text-stone-400 mt-1">Warranties</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-red-400">10K+</div>
+              <div className="text-sm text-stone-400 mt-1">Roofs done</div>
+            </div>
             </div>
           </div>
         </section>
 
-        <section id="services" aria-labelledby="services-heading" className="py-24 relative">
-          <div className="max-w-7xl mx-auto px-6">
+        <section id="services" className="py-24" aria-labelledby="services-heading">
+          <div className="max-w-6xl mx-auto px-6">
             <div className="text-center mb-16">
-              <p className="text-neon text-sm font-bold tracking-widest mb-4">WHAT WE DO</p>
-              <h2 id="services-heading" className="text-4xl font-bold text-white mb-4">Roofing Services</h2>
-              <p className="text-slate-text max-w-2xl mx-auto">Complete roofing solutions for residential and commercial properties. Quality materials, expert installation.</p>
+              <p className="text-red-400 text-sm tracking-widest uppercase mb-3">What We Offer</p>
+              <h2 id="services-heading" className="text-4xl md:text-5xl font-bold">Our Services</h2>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((s,i) => (
-                <article key={i} className="glass rounded-2xl p-6 hover:border-neon/30 transition-all hover:scale-105 group">
-                  <div className="text-4xl mb-4" aria-hidden="true">{s.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">{s.title}</h3>
-                  <p className="text-slate-text text-sm mb-3">{s.desc}</p>
-                  <div className="text-neon font-bold text-sm">{s.price}</div>
-                </article>
-              ))}
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">🏠</div>
+              <h3 className="text-xl font-bold mb-3 text-stone-100">Roof Replacement</h3>
+              <p className="text-stone-400 leading-relaxed">Asphalt, metal, tile, flat.</p>
+            </article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">🔧</div>
+              <h3 className="text-xl font-bold mb-3 text-stone-100">Roof Repair</h3>
+              <p className="text-stone-400 leading-relaxed">Leak repair, storm damage.</p>
+            </article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">🔍</div>
+              <h3 className="text-xl font-bold mb-3 text-stone-100">Inspection</h3>
+              <p className="text-stone-400 leading-relaxed">Comprehensive roof assessment.</p>
+            </article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">🌧️</div>
+              <h3 className="text-xl font-bold mb-3 text-stone-100">Gutters</h3>
+              <p className="text-stone-400 leading-relaxed">Installation and cleaning.</p>
+            </article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">🏢</div>
+              <h3 className="text-xl font-bold mb-3 text-stone-100">Commercial</h3>
+              <p className="text-stone-400 leading-relaxed">Flat and low-slope roofing.</p>
+            </article>
+            <article className="bg-stone-900 border border-stone-800 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group">
+              <div className="text-4xl mb-4" aria-hidden="true">⛈️</div>
+              <h3 className="text-xl font-bold mb-3 text-stone-100">Storm Damage</h3>
+              <p className="text-stone-400 leading-relaxed">Insurance claim assistance.</p>
+            </article>
             </div>
           </div>
         </section>
 
-        <section id="about" aria-labelledby="about-heading" className="py-24 relative">
-          <div className="absolute inset-0" aria-hidden="true">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon/5 rounded-full blur-[150px]"/>
-          </div>
-          <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div className="glass rounded-3xl p-8">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Skyline Roofing team at work" className="w-full rounded-2xl opacity-90"/>
-            </div>
-            <div>
-              <p className="text-neon text-sm font-bold tracking-widest mb-4">WHY SKYLINE</p>
-              <h2 id="about-heading" className="text-4xl font-bold text-white mb-6">8,000+ Roofs & Counting</h2>
-              <p className="text-slate-text mb-8">Skyline Roofing has been the trusted name in roofing since 2005. Our GAF Master Elite certification places us in the top 2% of roofers nationwide. Every project comes with comprehensive warranties.</p>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { icon: '✓', text: 'Licensed & Insured' },
-                  { icon: '✓', text: 'GAF Master Elite' },
-                  { icon: '✓', text: '50-Year Warranty' },
-                  { icon: '✓', text: 'Free Inspections' },
-                  { icon: '✓', text: 'Financing Available' },
-                  { icon: '✓', text: 'Drone Inspections' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <span className="text-neon" aria-hidden="true">{item.icon}</span>
-                    <span className="text-sm text-white-soft">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="reviews" aria-labelledby="reviews-heading" className="py-24 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <p className="text-neon text-sm font-bold tracking-widest mb-4">TESTIMONIALS</p>
-              <h2 id="reviews-heading" className="text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {testimonials.map((t, i) => (
-                <article key={i} className="glass rounded-2xl p-6">
-                  <div className="flex gap-1 mb-4" aria-label={`${t.rating} out of 5 stars`}>
-                    {[...Array(t.rating)].map((_, j) => (
-                      <span key={j} className="text-amber" aria-hidden="true">★</span>
-                    ))}
-                  </div>
-                  <p className="text-white-soft mb-6 italic">&ldquo;{t.text}&rdquo;</p>
-                  <div>
-                    <p className="font-bold text-white">{t.name}</p>
-                    <p className="text-sm text-slate-text">{t.role}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" aria-labelledby="contact-heading" className="py-24 relative">
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-            <div>
-              <p className="text-neon text-sm font-bold tracking-widest mb-4">GET PROTECTED</p>
-              <h2 id="contact-heading" className="text-4xl font-bold text-white mb-6">Schedule Your Free Inspection</h2>
-              <p className="text-slate-text mb-8">Our certified inspectors will assess your roof condition and provide a detailed report with recommendations at no cost.</p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center text-neon" aria-hidden="true">📞</div>
-                  <div><p className="text-sm text-slate-text">24/7 Emergency Line</p><p className="text-white font-bold">(555) 456-ROOF</p></div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center text-neon" aria-hidden="true">📍</div>
-                  <div><p className="text-sm text-slate-text">Service Area</p><p className="text-white font-bold">Greater Metro Area</p></div>
-                </div>
-              </div>
-            </div>
-            <div className="glass rounded-2xl p-8">
-              <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 3000); }} noValidate className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-white-soft mb-2">Your Name</label>
-                  <input id="name" type="text" aria-required="true" placeholder="John Smith" className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white placeholder-slate-text/50 focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors"/>
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-white-soft mb-2">Phone</label>
-                  <input id="phone" type="tel" aria-required="true" placeholder="(555) 000-0000" className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white placeholder-slate-text/50 focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors"/>
-                </div>
-                <div>
-                  <label htmlFor="service-type" className="block text-sm font-medium text-white-soft mb-2">Service Needed</label>
-                  <select id="service-type" className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors">
-                    <option value="">Select service</option>
-                    <option value="inspection">Roof Inspection</option>
-                    <option value="repair">Roof Repair</option>
-                    <option value="replacement">Full Replacement</option>
-                    <option value="emergency">Emergency Service</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="details" className="block text-sm font-medium text-white-soft mb-2">Describe Your Roof Issue</label>
-                  <textarea id="details" rows={3} placeholder="Tell us about your roofing needs..." className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white placeholder-slate-text/50 focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors resize-none"/>
-                </div>
-                <button type="submit" aria-label="Schedule your free roof inspection" className="w-full bg-neon text-dark py-4 rounded-xl font-bold hover:bg-neon-dim transition-all hover:scale-[1.02] neon-glow focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2">Schedule Free Inspection</button>
-              {submitted && <p className="text-center text-green-500 text-sm mt-2 animate-pulse">Sent! We will be in touch soon.</p>}
-              </form>
-            </div>
-          </div>
-        </section>
-      
-        
-        {/* Gallery Section */}
-        <section className="py-24" aria-labelledby="gallery-heading">
+        <section id="team" className="py-24 bg-stone-900" aria-labelledby="team-heading">
           <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 id="gallery-heading" className="text-3xl md:text-4xl font-bold mb-4">Our Work</h2>
-              <p className="text-current/60">A selection of recent projects.</p>
+            <div className="text-center mb-16">
+              <p className="text-red-400 text-sm tracking-widest uppercase mb-3">Our Team</p>
+              <h2 id="team-heading" className="text-4xl md:text-5xl font-bold">Meet the experts</h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[
-          {title: 'Before & After', img: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80', desc: 'Complete renovation project'},
-          {title: 'Residential Job', img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80', desc: 'Professional service delivery'},
-          {title: 'Commercial Project', img: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&q=80', desc: 'Large-scale commercial work'},
-          {title: 'Emergency Call', img: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&q=80', desc: 'Same-day emergency response'},
-          {title: 'Custom Solution', img: 'https://images.unsplash.com/photo-1585128792020-803d29415281?w=400&q=80', desc: 'Tailored to client needs'},
-          {title: 'Team in Action', img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80', desc: 'Our expert team at work'}
-              ].map((item, i) => (
-                <div key={i} className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
-                  <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
-                    <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="font-bold text-sm">{item.title}</div>
-                      <div className="text-xs text-white/70">{item.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">TH</div>
+              <h3 className="font-bold text-stone-100">Tom Henderson</h3>
+              <p className="text-sm text-red-400">Owner</p>
+              <p className="text-sm text-stone-400 mt-1">Licensed 20yr</p>
+            </div>
+            <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">CM</div>
+              <h3 className="font-bold text-stone-100">Carlos Mendez</h3>
+              <p className="text-sm text-red-400">Production Mgr</p>
+              <p className="text-sm text-stone-400 mt-1">HAAG certified</p>
+            </div>
+            <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">SW</div>
+              <h3 className="font-bold text-stone-100">Sarah Walsh</h3>
+              <p className="text-sm text-red-400">Project Coordinator</p>
+              <p className="text-sm text-stone-400 mt-1">Insurance specialist</p>
+            </div>
+            <div className="bg-stone-900 border border-stone-800 rounded-2xl p-6 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-red-400/20 flex items-center justify-center text-2xl font-bold text-red-400">JK</div>
+              <h3 className="font-bold text-stone-100">James Kim</h3>
+              <p className="text-sm text-red-400">Commercial Lead</p>
+              <p className="text-sm text-stone-400 mt-1">Flat roof expert</p>
+            </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-24" aria-labelledby="faq-heading">
+        <section id="faq" className="py-24" aria-labelledby="faq-heading">
           <div className="max-w-4xl mx-auto px-6">
             <div className="text-center mb-12">
-              <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-current/60">Everything you need to know.</p>
+              <p className="text-red-400 text-sm tracking-widest uppercase mb-3">Questions</p>
+              <h2 id="faq-heading" className="text-4xl md:text-5xl font-bold">FAQ</h2>
             </div>
             <div className="space-y-4">
-              {[
-          {question: 'How do I schedule an appointment?', answer: 'Call us, text us, or fill out the contact form. We typically respond within 1 hour during business hours.'},
-          {question: 'Are you licensed and insured?', answer: 'Yes. We are fully licensed, bonded, and carry comprehensive liability insurance.'},
-          {question: 'Do you offer free estimates?', answer: 'Yes. We provide free, no-obligation estimates for all services. Call or fill out our form to get started.'},
-          {question: 'What areas do you serve?', answer: 'We serve the entire metro area. Contact us to confirm service availability in your specific location.'}
-              ].map((faq, i) => (
-                <details key={i} className="group border border-current/10 rounded-xl p-5 [&_summary]:cursor-pointer">
-                  <summary className="font-medium flex justify-between items-center list-none">
-                    {faq.question}
-                    <span className="ml-4 text-current/40 group-open:rotate-45 transition-transform">+</span>
-                  </summary>
-                  <p className="mt-3 text-current/60 text-sm leading-relaxed">{faq.answer}</p>
-                </details>
-              ))}
+            <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
+              <summary className="font-medium flex justify-between items-center list-none text-stone-100">
+                Free inspection?
+                <span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-3 text-stone-400 text-sm leading-relaxed">Yes, full inspection and estimate free.</p>
+            </details>
+            <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
+              <summary className="font-medium flex justify-between items-center list-none text-stone-100">
+                Insurance?
+                <span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-3 text-stone-400 text-sm leading-relaxed">We work directly with your insurance company.</p>
+            </details>
+            <details className="group border border-current/10 rounded-xl p-5 cursor-pointer">
+              <summary className="font-medium flex justify-between items-center list-none text-stone-100">
+                Warranty?
+                <span className="ml-4 text-stone-400 group-open:rotate-45 transition-transform text-xl">+</span>
+              </summary>
+              <p className="mt-3 text-stone-400 text-sm leading-relaxed">25-year workmanship warranty on all new roofs.</p>
+            </details>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-24 bg-stone-900" aria-labelledby="contact-heading">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <p className="text-red-400 text-sm tracking-widest uppercase mb-3">Get In Touch</p>
+                <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold mb-6">Free Inspection</h2>
+                <div className="space-y-6 text-stone-400">
+                  <div>
+                    <div className="font-bold text-stone-100">Phone</div>
+                    <a href="tel:(555) 890-1237" className="hover:text-red-400 transition-colors">(555) 890-1237</a>
+                  </div>
+                  <div>
+                    <div className="font-bold text-stone-100">Address</div>
+                    <p className="whitespace-pre-line">Serving Metro Denver, CO</p>
+                  </div>
+                  <div>
+                    <div className="font-bold text-stone-100">Hours</div>
+                    <p>Mon–Sat 7 AM – 6 PM</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); setTimeout(() => setSubmitted(false), 3000); }} aria-label="Contact form">
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
+                      <input id="name" type="text" placeholder="John Smith" required className="w-full border border-current/20 rounded-xl px-4 py-3 bg-transparent placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-current/20" />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                      <input id="email" type="email" placeholder="john@example.com" required className="w-full border border-current/20 rounded-xl px-4 py-3 bg-transparent placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-current/20" />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                    <textarea id="message" rows={4} placeholder="How can we help?" required className="w-full border border-current/20 rounded-xl px-4 py-3 bg-transparent placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-current/20 resize-none" />
+                  </div>
+                  <button type="submit" className="w-full bg-red-400 text-black py-4 rounded-xl font-medium hover:opacity-90 transition-opacity">
+                    {submitted ? "Sent! We'll be in touch." : "Free Inspection"}
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer role="contentinfo" className="py-12 border-t border-dark-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-neon/20 rounded-lg flex items-center justify-center text-neon" aria-hidden="true">🏠</div>
-              <span className="text-white font-bold">Skyline Roofing</span>
-            </div>
-            <p className="text-slate-text text-sm">Licensed & Insured | GAF Master Elite | NRCA Member</p>
+      <footer className="bg-stone-900 border-t border-current/10 py-12">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div>
+            <div className="font-bold text-lg">Peak Roofing</div>
+            <p className="text-sm text-stone-400">Est. 2007</p>
           </div>
-          <div className="mt-8 pt-8 border-t border-dark-border text-center">
-            <p className="text-slate-text/60 text-xs">© 2024 Skyline Roofing. All rights reserved. Contractor License #RC-2005-3341</p>
-          </div>
-        
-            <div className="flex gap-4 text-sm">
-              <a href="#" className="hover:underline">Twitter</a>
-              <a href="#" className="hover:underline">LinkedIn</a>
-              <a href="#" className="hover:underline">Instagram</a>
-            </div>
-          </div>
+          <p className="text-sm text-stone-400">&copy; 2026 Peak Roofing. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
