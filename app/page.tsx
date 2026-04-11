@@ -297,7 +297,7 @@ export default function Home() {
                     style={{ width: '100%', textAlign: 'left', padding: '1.25rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'transparent', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', color: 'var(--heading)' }}
                   >
                     {faq.q}
-                    <span style={{ fontSize: '1.5rem', color: 'var(--accent)', flexShrink: false, marginLeft: '1rem' }}>{openFaq === i ? '−' : '+'}</span>
+                    <span style={{ fontSize: '1.5rem', color: 'var(--accent)', flexShrink: 0, marginLeft: '1rem' }}>{openFaq === i ? '−' : '+'}</span>
                   </button>
                   {openFaq === i && (
                     <div style={{ padding: '0 1.5rem 1.25rem', color: 'var(--body)', fontSize: '0.9rem', lineHeight: 1.8 }}>
