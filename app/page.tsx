@@ -76,12 +76,12 @@ export default function Home() {
             <h1 style={{ fontSize: '1.25rem', fontWeight: 900, letterSpacing: '0.05em', color: 'var(--accent)' }}>SKYLINE ROOFING</h1>
             <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', color: '#4a4a4a', textTransform: 'uppercase' }}>Licensed & Insured — Denver, CO — Est. 2004</p>
           </div>
-          <div className="hidden md:flex items-center" style={{ gap: '1.5rem' }}>
-            <button onClick={() => scrollTo('services')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="btn hover:text-[var(--accent)]">Services</button>
-            <button onClick={() => scrollTo('materials')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="btn hover:text-[var(--accent)]">Materials</button>
-            <button onClick={() => scrollTo('testimonials')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="btn hover:text-[var(--accent)]">Reviews</button>
-            <button onClick={() => scrollTo('faq')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="btn hover:text-[var(--accent)]">FAQ</button>
-            <button onClick={() => scrollTo('contact')} className="btn btn">Free Inspection</button>
+          <div className="hidden md:flex items-center" style={{ gap: '2rem' }}>
+            <button onClick={() => scrollTo('services')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Services</button>
+            <button onClick={() => scrollTo('materials')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Materials</button>
+            <button onClick={() => scrollTo('testimonials')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Reviews</button>
+            <button onClick={() => scrollTo('faq')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">FAQ</button>
+            <button onClick={() => scrollTo('contact')} className="btn btn" style={{ padding: '0.75rem 1.75rem' }}>Free Inspection</button>
           </div>
         </div>
       </nav>
@@ -90,8 +90,8 @@ export default function Home() {
         {/* 2. Hero Section */}
         <section className="hero">
           <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '4rem 1.5rem' }} className="text-center md:text-left">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+            <div className="grid md:grid-cols-5 gap-8 items-center">
+              <div className="md:col-span-3">
                 <span className="badge" style={{ marginBottom: '1rem', display: 'inline-block' }}>GAF Master Elite Contractor — Top 2% Nationally</span>
                 <h2 className="heading" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '1.5rem' }}>
                   Your roof.<br />Done right.<br /><span style={{ color: 'var(--accent)' }}>Guaranteed.</span>
@@ -104,7 +104,7 @@ export default function Home() {
                   <button onClick={() => scrollTo('services')} className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>View Our Services</button>
                 </div>
               </div>
-              <div className="card" style={{ textAlign: 'center' }}>
+              <div className="card md:col-span-2" style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '3.5rem', marginBottom: '0.5rem' }}>🏠</div>
                 <p style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Free Roof Inspection</p>
                 <p style={{ color: '#4a4a4a', fontSize: '0.9rem', marginBottom: '1rem' }}>47-point assessment with drone imaging and thermal leak detection. No obligation.</p>
@@ -146,7 +146,7 @@ export default function Home() {
                 From minor repairs to complete replacements, our certified crews deliver quality workmanship on every project. All work includes cleanup, inspection, and warranty documentation.
               </p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map((s, i) => (
                 <div key={i} className="card">
                   <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{s.icon}</div>
@@ -423,7 +423,7 @@ export default function Home() {
                 <button className="btn" onClick={() => scrollTo('materials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Materials Guide</button>
                 <button className="btn" onClick={() => scrollTo('testimonials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Reviews</button>
                 <button className="btn" onClick={() => scrollTo('faq')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>FAQ</button>
-                <button className="btn" onClick={() => scrollTo('contact')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Contact</button>
+                <button className="faq-toggle" onClick={() => scrollTo('contact')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Contact</button>
               </div>
             </div>
             <div>
