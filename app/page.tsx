@@ -74,13 +74,13 @@ export default function Home() {
         <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '1rem 1.5rem' }} className="flex justify-between items-center">
           <div>
             <h1 style={{ fontSize: '1.25rem', fontWeight: 900, letterSpacing: '0.05em', color: 'var(--accent)' }}>SKYLINE ROOFING</h1>
-            <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', color: 'var(--body)', textTransform: 'uppercase' }}>Licensed & Insured — Denver, CO — Est. 2004</p>
+            <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', color: '#4a4a4a', textTransform: 'uppercase' }}>Licensed & Insured — Denver, CO — Est. 2004</p>
           </div>
           <div className="hidden md:flex items-center" style={{ gap: '1.5rem' }}>
-            <button onClick={() => scrollTo('services')} style={{ fontSize: '0.875rem', color: 'var(--body)' }} className="hover:text-[var(--accent)]">Services</button>
-            <button onClick={() => scrollTo('materials')} style={{ fontSize: '0.875rem', color: 'var(--body)' }} className="hover:text-[var(--accent)]">Materials</button>
-            <button onClick={() => scrollTo('testimonials')} style={{ fontSize: '0.875rem', color: 'var(--body)' }} className="hover:text-[var(--accent)]">Reviews</button>
-            <button onClick={() => scrollTo('faq')} style={{ fontSize: '0.875rem', color: 'var(--body)' }} className="hover:text-[var(--accent)]">FAQ</button>
+            <button onClick={() => scrollTo('services')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="hover:text-[var(--accent)]">Services</button>
+            <button onClick={() => scrollTo('materials')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="hover:text-[var(--accent)]">Materials</button>
+            <button onClick={() => scrollTo('testimonials')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="hover:text-[var(--accent)]">Reviews</button>
+            <button onClick={() => scrollTo('faq')} style={{ fontSize: '0.875rem', color: '#4a4a4a' }} className="hover:text-[var(--accent)]">FAQ</button>
             <button onClick={() => scrollTo('contact')} className="btn">Free Inspection</button>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Home() {
                 <h2 className="heading" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', marginBottom: '1.5rem' }}>
                   Your roof.<br />Done right.<br /><span style={{ color: 'var(--accent)' }}>Guaranteed.</span>
                 </h2>
-                <p style={{ fontSize: '1.125rem', color: 'var(--body)', maxWidth: '32rem', marginBottom: '2rem', lineHeight: 1.7 }}>
+                <p style={{ fontSize: '1.125rem', color: '#4a4a4a', maxWidth: '32rem', marginBottom: '2rem', lineHeight: 1.7 }}>
                   From emergency leak repair to full roof replacement, Skyline Roofing delivers expert craftsmanship backed by the strongest warranties in Colorado. Free inspections. Honest pricing. No subcontractors.
                 </p>
                 <div className="flex gap-4 flex-wrap justify-center md:justify-start">
@@ -107,7 +107,7 @@ export default function Home() {
               <div className="card" style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '3.5rem', marginBottom: '0.5rem' }}>🏠</div>
                 <p style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Free Roof Inspection</p>
-                <p style={{ color: 'var(--body)', fontSize: '0.9rem', marginBottom: '1rem' }}>47-point assessment with drone imaging and thermal leak detection. No obligation.</p>
+                <p style={{ color: '#4a4a4a', fontSize: '0.9rem', marginBottom: '1rem' }}>47-point assessment with drone imaging and thermal leak detection. No obligation.</p>
                 <button onClick={() => scrollTo('contact')} className="btn" style={{ width: '100%' }}>Get Started Today →</button>
               </div>
             </div>
@@ -119,19 +119,19 @@ export default function Home() {
           <div style={{ maxWidth: '72rem', margin: '0 auto', padding: '0 1.5rem' }} className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="heading" style={{ fontSize: '2rem', color: 'var(--accent)' }}>20+</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--body)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Years Experience</div>
+              <div style={{ fontSize: '0.75rem', color: '#4a4a4a', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Years Experience</div>
             </div>
             <div>
               <div className="heading" style={{ fontSize: '2rem', color: 'var(--accent)' }}>3,000+</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--body)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Roofs Completed</div>
+              <div style={{ fontSize: '0.75rem', color: '#4a4a4a', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Roofs Completed</div>
             </div>
             <div>
               <div className="heading" style={{ fontSize: '2rem', color: 'var(--accent)' }}>4.9★</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--body)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Google Rating</div>
+              <div style={{ fontSize: '0.75rem', color: '#4a4a4a', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Google Rating</div>
             </div>
             <div>
               <div className="heading" style={{ fontSize: '2rem', color: 'var(--accent)' }}>24/7</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--body)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Emergency Service</div>
+              <div style={{ fontSize: '0.75rem', color: '#4a4a4a', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Emergency Service</div>
             </div>
           </div>
         </section>
@@ -142,7 +142,7 @@ export default function Home() {
             <div className="text-center" style={{ marginBottom: '3rem' }}>
               <span className="badge">What We Do</span>
               <h2 id="services-heading" className="heading" style={{ fontSize: '2.25rem', marginTop: '0.75rem' }}>Professional Roofing Services</h2>
-              <p style={{ color: 'var(--body)', maxWidth: '40rem', margin: '1rem auto 0', lineHeight: 1.7 }}>
+              <p style={{ color: '#4a4a4a', maxWidth: '40rem', margin: '1rem auto 0', lineHeight: 1.7 }}>
                 From minor repairs to complete replacements, our certified crews deliver quality workmanship on every project. All work includes cleanup, inspection, and warranty documentation.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function Home() {
                 <div key={i} className="card">
                   <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{s.icon}</div>
                   <h3 className="heading" style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{s.name}</h3>
-                  <p style={{ color: 'var(--body)', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1rem' }}>{s.desc}</p>
+                  <p style={{ color: '#4a4a4a', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1rem' }}>{s.desc}</p>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ color: 'var(--accent)', fontWeight: 700 }}>{s.price}</span>
                     <button onClick={() => scrollTo('contact')} style={{ color: 'var(--accent)', fontSize: '0.875rem', fontWeight: 600 }}>Learn More →</button>
@@ -168,7 +168,7 @@ export default function Home() {
             <div className="text-center" style={{ marginBottom: '3rem' }}>
               <span className="badge">Materials Guide</span>
               <h2 id="materials-heading" className="heading" style={{ fontSize: '2.25rem', marginTop: '0.75rem' }}>Choose the Right Roofing Material</h2>
-              <p style={{ color: 'var(--body)', maxWidth: '40rem', margin: '1rem auto 0', lineHeight: 1.7 }}>
+              <p style={{ color: '#4a4a4a', maxWidth: '40rem', margin: '1rem auto 0', lineHeight: 1.7 }}>
                 Every home is different. We install all major roofing systems and help you choose the best option for your budget, style, and Colorado's unique climate.
               </p>
             </div>
@@ -210,7 +210,7 @@ export default function Home() {
                 <div key={i} className="card text-center">
                   <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{item.icon}</div>
                   <h3 className="heading" style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>{item.title}</h3>
-                  <p style={{ color: 'var(--body)', fontSize: '0.85rem', lineHeight: 1.7 }}>{item.desc}</p>
+                  <p style={{ color: '#4a4a4a', fontSize: '0.85rem', lineHeight: 1.7 }}>{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -224,7 +224,7 @@ export default function Home() {
               <div>
                 <span className="badge">Flexible Payment</span>
                 <h2 id="financing-heading" className="heading" style={{ fontSize: '2.25rem', marginTop: '0.75rem', marginBottom: '1rem' }}>Roof Now, Pay Over Time</h2>
-                <p style={{ color: 'var(--body)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                <p style={{ color: '#4a4a4a', lineHeight: 1.7, marginBottom: '1.5rem' }}>
                   A new roof is a significant investment. We offer multiple financing options to fit your budget, including 0% APR plans and low monthly payments. Don't let cost delay critical repairs — a leaking roof only gets more expensive.
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -235,7 +235,7 @@ export default function Home() {
                     'Quick approval — most decisions in under 15 minutes',
                     'We accept all major credit cards',
                   ].map((item, i) => (
-                    <li key={i} style={{ padding: '0.5rem 0', fontSize: '0.9rem', color: 'var(--body)' }}>✓ {item}</li>
+                    <li key={i} style={{ padding: '0.5rem 0', fontSize: '0.9rem', color: '#4a4a4a' }}>✓ {item}</li>
                   ))}
                 </ul>
                 <button onClick={() => scrollTo('contact')} className="btn" style={{ marginTop: '1.5rem' }}>Apply for Financing</button>
@@ -243,15 +243,15 @@ export default function Home() {
               <div className="card text-center">
                 <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>💰</div>
                 <h3 className="heading" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Quick Pre-Qualification</h3>
-                <p style={{ color: 'var(--body)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>No hard credit pull. See your options in minutes.</p>
+                <p style={{ color: '#4a4a4a', fontSize: '0.9rem', marginBottom: '1.5rem' }}>No hard credit pull. See your options in minutes.</p>
                 <div style={{ background: 'var(--alt-bg)', borderRadius: 'var(--radius)', padding: '1.5rem', textAlign: 'left' }}>
                   <div style={{ marginBottom: '1rem' }}>
                     <label style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>Example: $12,000 Roof</label>
-                    <div style={{ fontSize: '0.85rem', color: 'var(--body)' }}>18 months at 0% APR = $667/mo</div>
+                    <div style={{ fontSize: '0.85rem', color: '#4a4a4a' }}>18 months at 0% APR = $667/mo</div>
                   </div>
                   <div>
                     <label style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>Example: $12,000 Roof</label>
-                    <div style={{ fontSize: '0.85rem', color: 'var(--body)' }}>60 months at 7.9% APR = $242/mo</div>
+                    <div style={{ fontSize: '0.85rem', color: '#4a4a4a' }}>60 months at 7.9% APR = $242/mo</div>
                   </div>
                 </div>
               </div>
@@ -265,16 +265,16 @@ export default function Home() {
             <div className="text-center" style={{ marginBottom: '3rem' }}>
               <span className="badge">Customer Stories</span>
               <h2 id="testimonials-heading" className="heading" style={{ fontSize: '2.25rem', marginTop: '0.75rem' }}>What Our Clients Say</h2>
-              <p style={{ color: 'var(--body)', maxWidth: '32rem', margin: '1rem auto 0' }}>Over 3,000 homeowners trust Skyline with their most important investment.</p>
+              <p style={{ color: '#4a4a4a', maxWidth: '32rem', margin: '1rem auto 0' }}>Over 3,000 homeowners trust Skyline with their most important investment.</p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {testimonials.map((t, i) => (
                 <div key={i} className="card">
                   <div style={{ color: '#facc15', fontSize: '1.1rem', marginBottom: '1rem' }}>{'★'.repeat(t.rating)}</div>
-                  <p style={{ color: 'var(--body)', fontSize: '0.9rem', lineHeight: 1.8, marginBottom: '1.5rem', fontStyle: 'italic' }}>"{t.text}"</p>
+                  <p style={{ color: '#4a4a4a', fontSize: '0.9rem', lineHeight: 1.8, marginBottom: '1.5rem', fontStyle: 'italic' }}>"{t.text}"</p>
                   <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1rem' }}>
                     <div style={{ fontWeight: 700, fontSize: '0.95rem' }}>{t.name}</div>
-                    <div style={{ color: 'var(--body)', fontSize: '0.8rem' }}>{t.location}</div>
+                    <div style={{ color: '#4a4a4a', fontSize: '0.8rem' }}>{t.location}</div>
                   </div>
                 </div>
               ))}
@@ -300,7 +300,7 @@ export default function Home() {
                     <span style={{ fontSize: '1.5rem', color: 'var(--accent)', flexShrink: 0, marginLeft: '1rem' }}>{openFaq === i ? '−' : '+'}</span>
                   </button>
                   {openFaq === i && (
-                    <div style={{ padding: '0 1.5rem 1.25rem', color: 'var(--body)', fontSize: '0.9rem', lineHeight: 1.8 }}>
+                    <div style={{ padding: '0 1.5rem 1.25rem', color: '#4a4a4a', fontSize: '0.9rem', lineHeight: 1.8 }}>
                       {faq.a}
                     </div>
                   )}
@@ -316,7 +316,7 @@ export default function Home() {
             <div className="text-center" style={{ marginBottom: '3rem' }}>
               <span className="badge">Coverage Area</span>
               <h2 id="areas-heading" className="heading" style={{ fontSize: '2.25rem', marginTop: '0.75rem' }}>Proudly Serving the Front Range</h2>
-              <p style={{ color: 'var(--body)', maxWidth: '32rem', margin: '1rem auto 0' }}>
+              <p style={{ color: '#4a4a4a', maxWidth: '32rem', margin: '1rem auto 0' }}>
                 From downtown Denver to Castle Rock, our crews are in your neighborhood every week. Free travel within 50 miles of our headquarters.
               </p>
             </div>
@@ -334,7 +334,7 @@ export default function Home() {
             <div className="text-center" style={{ marginBottom: '3rem' }}>
               <span className="badge">Get In Touch</span>
               <h2 id="contact-heading" className="heading" style={{ fontSize: '2.25rem', marginTop: '0.75rem' }}>Schedule Your Free Inspection</h2>
-              <p style={{ color: 'var(--body)', maxWidth: '32rem', margin: '1rem auto 0' }}>
+              <p style={{ color: '#4a4a4a', maxWidth: '32rem', margin: '1rem auto 0' }}>
                 Fill out the form below or call us directly. Most inspections are scheduled within 48 hours.
               </p>
             </div>
@@ -345,17 +345,17 @@ export default function Home() {
                   <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📞</div>
                   <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>Call Us Anytime</div>
                   <a href="tel:(555) 890-1237" style={{ color: 'var(--accent)', fontSize: '1.5rem', fontWeight: 900 }}>(555) 890-1237</a>
-                  <p style={{ color: 'var(--body)', fontSize: '0.8rem', marginTop: '0.5rem' }}>24/7 Emergency Line Available</p>
+                  <p style={{ color: '#4a4a4a', fontSize: '0.8rem', marginTop: '0.5rem' }}>24/7 Emergency Line Available</p>
                 </div>
                 <div className="card text-center">
                   <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📍</div>
                   <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>Visit Our Office</div>
-                  <p style={{ color: 'var(--body)', fontSize: '0.9rem' }}>1247 Broadway, Suite 200<br />Denver, CO 80203</p>
+                  <p style={{ color: '#4a4a4a', fontSize: '0.9rem' }}>1247 Broadway, Suite 200<br />Denver, CO 80203</p>
                 </div>
                 <div className="card text-center">
                   <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🕐</div>
                   <div style={{ fontWeight: 700, marginBottom: '0.25rem' }}>Business Hours</div>
-                  <p style={{ color: 'var(--body)', fontSize: '0.9rem' }}>Mon–Fri: 7AM–7PM<br />Sat: 8AM–4PM<br />Sun: Emergency Only</p>
+                  <p style={{ color: '#4a4a4a', fontSize: '0.9rem' }}>Mon–Fri: 7AM–7PM<br />Sat: 8AM–4PM<br />Sun: Emergency Only</p>
                 </div>
               </div>
 
@@ -396,7 +396,7 @@ export default function Home() {
                   <button type="submit" className="btn" style={{ width: '100%', padding: '1rem', fontSize: '1rem' }}>
                     Request Free Inspection →
                   </button>
-                  <p style={{ textAlign: 'center', color: 'var(--body)', fontSize: '0.75rem', marginTop: '0.75rem' }}>
+                  <p style={{ textAlign: 'center', color: '#4a4a4a', fontSize: '0.75rem', marginTop: '0.75rem' }}>
                     We respond within 24 hours. No spam, ever.
                   </p>
                 </form>
@@ -412,30 +412,30 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8" style={{ marginBottom: '2rem' }}>
             <div>
               <h3 className="heading" style={{ fontSize: '1.1rem', color: 'var(--accent)', marginBottom: '0.5rem' }}>SKYLINE ROOFING</h3>
-              <p style={{ color: 'var(--body)', fontSize: '0.85rem', lineHeight: 1.7 }}>
+              <p style={{ color: '#4a4a4a', fontSize: '0.85rem', lineHeight: 1.7 }}>
                 Denver's most trusted roofing contractor since 2004. GAF Master Elite certified. Licensed, bonded, and insured.
               </p>
             </div>
             <div>
               <h4 style={{ fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>Quick Links</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <button onClick={() => scrollTo('services')} style={{ color: 'var(--body)', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Services</button>
-                <button onClick={() => scrollTo('materials')} style={{ color: 'var(--body)', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Materials Guide</button>
-                <button onClick={() => scrollTo('testimonials')} style={{ color: 'var(--body)', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Reviews</button>
-                <button onClick={() => scrollTo('faq')} style={{ color: 'var(--body)', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>FAQ</button>
-                <button onClick={() => scrollTo('contact')} style={{ color: 'var(--body)', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Contact</button>
+                <button onClick={() => scrollTo('services')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Services</button>
+                <button onClick={() => scrollTo('materials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Materials Guide</button>
+                <button onClick={() => scrollTo('testimonials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Reviews</button>
+                <button onClick={() => scrollTo('faq')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>FAQ</button>
+                <button onClick={() => scrollTo('contact')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Contact</button>
               </div>
             </div>
             <div>
               <h4 style={{ fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>Contact</h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: 'var(--body)' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.85rem', color: '#4a4a4a' }}>
                 <span>📞 <a href="tel:(555) 890-1237" style={{ color: 'var(--accent)' }}>(555) 890-1237</a></span>
                 <span>📍 1247 Broadway, Denver, CO 80203</span>
                 <span>🕐 Mon–Fri 7AM–7PM, Sat 8AM–4PM</span>
               </div>
             </div>
           </div>
-          <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.5rem', textAlign: 'center', color: 'var(--body)', fontSize: '0.8rem' }}>
+          <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.5rem', textAlign: 'center', color: '#4a4a4a', fontSize: '0.8rem' }}>
             © {new Date().getFullYear()} Skyline Roofing. All rights reserved. Denver, CO. Licensed & Insured. ROC #2004-11847.
           </div>
         </div>
