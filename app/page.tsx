@@ -77,11 +77,11 @@ export default function Home() {
             <p style={{ fontSize: '0.65rem', letterSpacing: '0.15em', color: '#4a4a4a', textTransform: 'uppercase' }}>Licensed & Insured — Denver, CO — Est. 2004</p>
           </div>
           <div className="hidden md:flex items-center" style={{ gap: '2rem' }}>
-            <button style={{ cursor: "pointer" }} onClick={() => scrollTo('services')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Services</button>
-            <button style={{ cursor: "pointer" }} onClick={() => scrollTo('materials')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Materials</button>
-            <button style={{ cursor: "pointer" }} onClick={() => scrollTo('testimonials')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Reviews</button>
-            <button style={{ cursor: "pointer" }} onClick={() => scrollTo('faq')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">FAQ</button>
-            <button style={{ cursor: "pointer" }} onClick={() => scrollTo('contact')} className="btn btn" style={{ padding: '0.75rem 1.75rem' }}>Free Inspection</button>
+            <button onClick={() => scrollTo('services')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Services</button>
+            <button onClick={() => scrollTo('materials')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Materials</button>
+            <button onClick={() => scrollTo('testimonials')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">Reviews</button>
+            <button onClick={() => scrollTo('faq')} style={{ fontSize: '1rem', color: '#4a4a4a', padding: '0.5rem 1rem' }} className="btn hover:text-[var(--accent)]">FAQ</button>
+            <button onClick={() => scrollTo('contact')} className="btn btn" style={{ padding: '0.75rem 1.75rem' }}>Free Inspection</button>
           </div>
         </div>
       </nav>
@@ -100,15 +100,15 @@ export default function Home() {
                   From emergency leak repair to full roof replacement, Skyline Roofing delivers expert craftsmanship backed by the strongest warranties in Colorado. Free inspections. Honest pricing. No subcontractors.
                 </p>
                 <div className="flex gap-4 flex-wrap justify-center md:justify-start">
-                  <button style={{ cursor: "pointer" }} onClick={() => scrollTo('contact')} className="btn btn" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>Schedule Free Inspection</button>
-                  <button style={{ cursor: "pointer" }} onClick={() => scrollTo('services')} className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>View Our Services</button>
+                  <button onClick={() => scrollTo('contact')} className="btn btn" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>Schedule Free Inspection</button>
+                  <button onClick={() => scrollTo('services')} className="btn btn-outline" style={{ padding: '1rem 2rem', fontSize: '1rem' }}>View Our Services</button>
                 </div>
               </div>
               <div className="card md:col-span-2" style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '3.5rem', marginBottom: '0.5rem' }}>🏠</div>
                 <p style={{ fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem' }}>Free Roof Inspection</p>
                 <p style={{ color: '#4a4a4a', fontSize: '0.9rem', marginBottom: '1rem' }}>47-point assessment with drone imaging and thermal leak detection. No obligation.</p>
-                <button style={{ cursor: "pointer" }} onClick={() => scrollTo('contact')} className="btn btn" style={{ width: '100%' }}>Get Started Today →</button>
+                <button onClick={() => scrollTo('contact')} className="btn btn" style={{ width: '100%' }}>Get Started Today →</button>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function Home() {
                   <p style={{ color: '#4a4a4a', fontSize: '0.875rem', lineHeight: 1.7, marginBottom: '1rem' }}>{s.desc}</p>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ color: 'var(--accent)', fontWeight: 700 }}>{s.price}</span>
-                    <button style={{ cursor: "pointer" }} className="btn" onClick={() => scrollTo('contact')} style={{ color: 'var(--accent)', fontSize: '0.875rem', fontWeight: 600 }}>Learn More →</button>
+                    <button className="btn" onClick={() => scrollTo('contact')} style={{ color: 'var(--accent)', fontSize: '0.875rem', fontWeight: 600 }}>Learn More →</button>
                   </div>
                 </div>
               ))}
@@ -238,7 +238,7 @@ export default function Home() {
                     <li key={i} style={{ padding: '0.5rem 0', fontSize: '0.9rem', color: '#4a4a4a' }}>✓ {item}</li>
                   ))}
                 </ul>
-                <button style={{ cursor: "pointer" }} onClick={() => scrollTo('contact')} className="btn btn" style={{ marginTop: '1.5rem' }}>Apply for Financing</button>
+                <button onClick={() => scrollTo('contact')} className="btn btn" style={{ marginTop: '1.5rem' }}>Apply for Financing</button>
               </div>
               <div className="card text-center">
                 <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>💰</div>
@@ -292,7 +292,7 @@ export default function Home() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {faqs.map((faq, i) => (
                 <div key={i} className="card" style={{ padding: '0', overflow: 'hidden' }}>
-                  <button style={{ cursor: "pointer" }} className="btn"
+                  <button className="btn"
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     style={{ width: '100%', textAlign: 'left', padding: '1.25rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'transparent', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', color: 'var(--heading)' }}
                   >
@@ -393,7 +393,7 @@ export default function Home() {
                     <label style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.5rem' }}>Tell Us About Your Roof</label>
                     <textarea rows={4} placeholder="Describe any issues, the age of your roof, or what you're looking for..." value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} style={{ width: '100%', resize: 'vertical' }} />
                   </div>
-                  <button style={{ cursor: "pointer" }} type="submit" className="btn" style={{ width: '100%', padding: '1rem', fontSize: '1rem' }}>
+                  <button type="submit" className="btn" style={{ width: '100%', padding: '1rem', fontSize: '1rem' }}>
                     Request Free Inspection →
                   </button>
                   <p style={{ textAlign: 'center', color: '#4a4a4a', fontSize: '0.75rem', marginTop: '0.75rem' }}>
@@ -419,11 +419,11 @@ export default function Home() {
             <div>
               <h4 style={{ fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>Quick Links</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                <button style={{ cursor: "pointer" }} className="btn" onClick={() => scrollTo('services')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Services</button>
-                <button style={{ cursor: "pointer" }} className="btn" onClick={() => scrollTo('materials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Materials Guide</button>
-                <button style={{ cursor: "pointer" }} className="btn" onClick={() => scrollTo('testimonials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Reviews</button>
-                <button style={{ cursor: "pointer" }} className="btn" onClick={() => scrollTo('faq')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>FAQ</button>
-                <button style={{ cursor: "pointer" }} className="faq-toggle" onClick={() => scrollTo('contact')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Contact</button>
+                <button className="btn" onClick={() => scrollTo('services')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Services</button>
+                <button className="btn" onClick={() => scrollTo('materials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Materials Guide</button>
+                <button className="btn" onClick={() => scrollTo('testimonials')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Reviews</button>
+                <button className="btn" onClick={() => scrollTo('faq')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>FAQ</button>
+                <button className="faq-toggle" onClick={() => scrollTo('contact')} style={{ color: '#4a4a4a', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Contact</button>
               </div>
             </div>
             <div>
