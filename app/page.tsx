@@ -31,9 +31,9 @@ export default function RoofingPage() {
 
   const materials: Record<string, { name: string; lifespan: string; cost: string; desc: string; features: string[]; img: string }> = {
     asphalt: { name: 'Architectural Shingles', lifespan: '25-30 years', cost: '$3.50-$5.50/sq ft', desc: 'The most popular residential roofing choice, architectural shingles offer excellent durability, wind resistance up to 130 mph, and a wide range of colors and styles to complement any home. Available in Class A fire-rated options.', features: ['Wind resistant to 130 mph', 'Class A fire rated', 'Algae resistant', 'Lifetime warranty available'], img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop' },
-    metal: { name: 'Standing Seam Metal', lifespan: '40-70 years', cost: '$8-$14/sq ft', desc: 'Premium metal roofing delivers unmatched longevity, energy efficiency, and weather resistance. Available in steel, aluminum, and copper with concealed fastener systems for a sleek, modern look that increases property value.', features: ['50+ year lifespan', 'Energy efficient', '100% recyclable', 'Snow shedding'], img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop' },
-    tile: { name: 'Clay & Concrete Tile', lifespan: '50-100 years', cost: '$10-$20/sq ft', desc: 'Timeless elegance meets extreme durability with clay and concrete tile roofing. These premium materials resist fire, rot, and insect damage while providing superior thermal insulation and a distinctive aesthetic that enhances curb appeal.', features: ['Century-long lifespan', 'Fire resistant', 'Low maintenance', 'Superior insulation'], img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop' },
-    slate: { name: 'Natural Slate', lifespan: '75-200 years', cost: '$15-$30/sq ft', desc: 'The ultimate in roofing luxury, natural slate is quarried from the earth and installed by our master craftsmen. Each piece is unique, creating a one-of-a-kind roof that can last for generations with minimal maintenance.', features: ['Indestructible', 'Naturally beautiful', 'Eco-friendly', 'Adds property value'], img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=400&fit=crop' },
+    metal: { name: 'Standing Seam Metal', lifespan: '40-70 years', cost: '$8-$14/sq ft', desc: 'Premium metal roofing delivers unmatched longevity, energy efficiency, and weather resistance. Available in steel, aluminum, and copper with concealed fastener systems for a sleek, modern look that increases property value.', features: ['50+ year lifespan', 'Energy efficient', '100% recyclable', 'Snow shedding'], img: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop' },
+    tile: { name: 'Clay & Concrete Tile', lifespan: '50-100 years', cost: '$10-$20/sq ft', desc: 'Timeless elegance meets extreme durability with clay and concrete tile roofing. These premium materials resist fire, rot, and insect damage while providing superior thermal insulation and a distinctive aesthetic that enhances curb appeal.', features: ['Century-long lifespan', 'Fire resistant', 'Low maintenance', 'Superior insulation'], img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop' },
+    slate: { name: 'Natural Slate', lifespan: '75-200 years', cost: '$15-$30/sq ft', desc: 'The ultimate in roofing luxury, natural slate is quarried from the earth and installed by our master craftsmen. Each piece is unique, creating a one-of-a-kind roof that can last for generations with minimal maintenance.', features: ['Indestructible', 'Naturally beautiful', 'Eco-friendly', 'Adds property value'], img: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=400&fit=crop' },
   };
 
   return (
@@ -106,7 +106,7 @@ export default function RoofingPage() {
         <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
           <div className="section-header reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="badge">Our Services</span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '1rem' }}>Complete Roofing Solutions</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginTop: '1rem' }}>Complete Roofing Solutions</h2>
             <p style={{ marginTop: '1rem', maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto', color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.7 }}>From minor repairs to complete tear-offs, Skyline Roofing handles every project with meticulous attention to detail, premium materials, and the craftsmanship that comes from over two decades of experience.</p>
           </div>
           <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
@@ -125,7 +125,7 @@ export default function RoofingPage() {
                   <span style={{ position: 'absolute', top: '12px', right: '12px', fontSize: '1.5rem', background: 'rgba(10,10,10,0.7)', backdropFilter: 'blur(8px)', padding: '6px 10px', borderRadius: '4px', border: '1px solid rgba(255,255,255,0.1)' }}>{service.icon}</span>
                 </div>
                 <div className="service-card-body">
-                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>{service.name}</h3>
+                  <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>{service.name}</h3>
                   <p style={{ fontSize: '0.85rem', lineHeight: 1.65, color: 'var(--text-secondary)', marginBottom: '1rem', flex: 1 }}>{service.desc}</p>
                   <div style={{ fontFamily: 'var(--font-heading)', fontSize: '0.95rem', fontWeight: 700, color: 'var(--accent)', marginBottom: '1rem' }}>{service.price}</div>
                   <button style={{ background: 'none', border: 'none', color: 'var(--accent)', fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.12em', cursor: 'pointer', textAlign: 'left', padding: 0 }}>Learn More →</button>
@@ -141,7 +141,7 @@ export default function RoofingPage() {
         <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
           <div className="section-header reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="badge">Roofing Materials</span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '1rem' }}>Choose Your Perfect Roof</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginTop: '1rem' }}>Choose Your Perfect Roof</h2>
             <p style={{ marginTop: '1rem', maxWidth: '42rem', margin: '1rem auto', color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.7 }}>We offer a comprehensive selection of premium roofing materials to match every style, budget, and performance requirement. Click each option to learn more.</p>
           </div>
 
@@ -158,7 +158,7 @@ export default function RoofingPage() {
               <img src={materials[activeMaterial].img} alt={materials[activeMaterial].name} style={{ width: '100%', height: '350px', objectFit: 'cover' }} />
             </div>
             <div>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1rem' }}>{materials[activeMaterial].name}</h3>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginBottom: '1rem' }}>{materials[activeMaterial].name}</h3>
               <div style={{ display: 'flex', gap: '2rem', marginBottom: '1.5rem' }}>
                 <div>
                   <div style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)' }}>Lifespan</div>
@@ -188,7 +188,7 @@ export default function RoofingPage() {
         <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
           <div className="section-header reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="badge">How It Works</span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '1rem' }}>Our Roofing Process</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginTop: '1rem' }}>Our Roofing Process</h2>
           </div>
           <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1.5rem' }}>
             {[
@@ -200,7 +200,7 @@ export default function RoofingPage() {
             ].map((item) => (
               <div key={item.step} style={{ textAlign: 'center' }}>
                 <div style={{ width: '50px', height: '50px', borderRadius: '50%', background: 'rgba(255,149,0,0.08)', border: '2px solid var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem', fontFamily: 'var(--font-heading)', fontSize: '1rem', fontWeight: 700, color: 'var(--accent)' }}>{item.step}</div>
-                <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.5rem' }}>{item.title}</h4>
+                <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '0.95rem', fontWeight: 700, textTransform: 'none', marginBottom: '0.5rem' }}>{item.title}</h4>
                 <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             ))}
@@ -213,7 +213,7 @@ export default function RoofingPage() {
         <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
           <div className="section-header reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="badge">Financing Options</span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '1rem' }}>Affordable Roof Financing</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginTop: '1rem' }}>Affordable Roof Financing</h2>
             <p style={{ marginTop: '1rem', maxWidth: '42rem', margin: '1rem auto', color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.7 }}>A new roof is a major investment. We offer flexible financing options to make quality roofing accessible to every homeowner, with fast approvals and competitive rates.</p>
           </div>
           <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
@@ -225,7 +225,7 @@ export default function RoofingPage() {
             ].map((option) => (
               <div key={option.title} className="card" style={{ position: 'relative', padding: '2rem', borderRadius: '6px' }}>
                 <div style={{ position: 'absolute', top: '1rem', right: '1rem', fontFamily: 'var(--font-heading)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--accent)', background: 'rgba(255,149,0,0.1)', border: '1px solid rgba(255,149,0,0.3)', padding: '3px 10px', borderRadius: '2px' }}>{option.tag}</div>
-                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.25rem' }}>{option.title}</h3>
+                <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginBottom: '0.25rem' }}>{option.title}</h3>
                 <div style={{ fontFamily: 'var(--font-heading)', fontSize: '0.9rem', fontWeight: 600, color: 'var(--accent)', marginBottom: '1rem' }}>{option.period}</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.5rem' }}>{option.desc}</p>
                 <button className="btn-outline" style={{ width: '100%', fontSize: '0.8rem' }}>Apply Now</button>
@@ -240,18 +240,18 @@ export default function RoofingPage() {
         <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
           <div className="section-header reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="badge">Project Gallery</span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '1rem' }}>Recent Roof Installations</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginTop: '1rem' }}>Recent Roof Installations</h2>
           </div>
           <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
             {[
               { img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=300&fit=crop', label: 'Architectural Shingles' },
               { img: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&h=300&fit=crop', label: 'Metal Standing Seam' },
-              { img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop', label: 'Tile Roof Install' },
+              { img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop', label: 'Tile Roof Install' },
               { img: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=300&fit=crop', label: 'Commercial Flat Roof' },
               { img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop', label: 'Office Complex' },
               { img: 'https://images.unsplash.com/photo-1631545806609-d2e4c3befed5?w=400&h=300&fit=crop', label: 'Storm Restoration' },
               { img: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=300&fit=crop', label: 'Slate Roof' },
-              { img: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=300&fit=crop', label: 'Gutter System' },
+              { img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&h=300&fit=crop', label: 'Gutter System' },
             ].map((item) => (
               <div key={item.label} className="gallery-item">
                 <img src={item.img} alt={item.label} />
@@ -267,7 +267,7 @@ export default function RoofingPage() {
         <div style={{ maxWidth: '72rem', margin: '0 auto' }}>
           <div className="section-header reveal" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span className="badge">Testimonials</span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '1rem' }}>Homeowner Reviews</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginTop: '1rem' }}>Homeowner Reviews</h2>
           </div>
           <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
             {[
@@ -291,7 +291,7 @@ export default function RoofingPage() {
         <div style={{ maxWidth: '72rem', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
           <div className="reveal-left">
             <span className="badge">Get Started</span>
-            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', marginTop: '1rem', lineHeight: 1.05 }}>Request Your Free Estimate</h2>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '2.5rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginTop: '1rem', lineHeight: 1.05 }}>Request Your Free Estimate</h2>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, margin: '1.5rem 0 2rem' }}>
               Ready for a roof that protects your home and enhances its value? Fill out the form and our team will schedule your free, no-obligation roof inspection within 24 hours. We provide detailed written proposals with multiple material and financing options.
             </p>
@@ -322,7 +322,7 @@ export default function RoofingPage() {
           </div>
           <div className="reveal-scale">
             <div className="card" style={{ padding: '2rem', borderRadius: '6px' }}>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.5rem' }}>Free Roof Estimate</h3>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 700, textTransform: 'none', marginBottom: '1.5rem' }}>Free Roof Estimate</h3>
               {formSubmitted ? (
                 <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
                   <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>

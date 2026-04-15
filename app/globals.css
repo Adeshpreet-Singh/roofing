@@ -1,8 +1,9 @@
 /* SKYLINE ROOFING — Bold Professional Design System */
 /* Fonts: Teko (headings) + Roboto (body) */
 /* Colors: Black #0a0a0a, Amber #ff9500 */
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@import "tailwindcss";
 
 /* ========================= */
 /* CSS CUSTOM PROPERTIES     */
@@ -17,8 +18,8 @@
   --card-hover: #1a1a1a;
   --border: #222222;
   --text: #f0f0f0;
-  --text-secondary: #999999;
-  --text-muted: #555555;
+  --text-secondary: #bbbbbb;
+  --text-muted: #888888;
   --heading: #ffffff;
   --gradient-accent: linear-gradient(135deg, #ff9500, #ffb84d);
   --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
@@ -515,7 +516,6 @@ input::placeholder, textarea::placeholder {
     padding: 1.25rem;
   }
 }
-
 
 /* ===== FINAL 10/10 POLISH ===== */
 
