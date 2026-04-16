@@ -223,7 +223,7 @@ export default function RoofingPage() {
               { title: 'Same-As-Cash', period: '6 months', desc: 'No payments and no interest for 6 months. Ideal for homeowners expecting insurance reimbursement or bonus income.', tag: 'No Payments' },
               { title: 'Insurance Help', period: 'Full Coverage', desc: 'We work directly with your insurance company to maximize your storm damage claim, often covering your full deductible.', tag: 'Storm Damage' },
             ].map((option) => (
-              <div key={option.title} className="card" style={{ position: 'relative', padding: '2rem', borderRadius: '6px' }}>
+              <div key={option.title} className="card hover-lift" style={{ position: 'relative', padding: '2rem', borderRadius: '6px' }}>
                 <div style={{ position: 'absolute', top: '1rem', right: '1rem', fontFamily: 'var(--font-heading)', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--accent)', background: 'rgba(255,149,0,0.1)', border: '1px solid rgba(255,149,0,0.3)', padding: '3px 10px', borderRadius: '2px' }}>{option.tag}</div>
                 <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginBottom: '0.25rem' }}>{option.title}</h3>
                 <div style={{ fontFamily: 'var(--font-heading)', fontSize: '0.9rem', fontWeight: 600, color: 'var(--accent)', marginBottom: '1rem' }}>{option.period}</div>
@@ -275,7 +275,7 @@ export default function RoofingPage() {
               { name: 'Steve B.', text: 'We chose standing seam metal and it was the best home improvement decision we ever made. Skyline installed it in 3 days and the quality is outstanding. Our energy bills dropped noticeably and the curb appeal went through the roof. Pun intended!', loc: 'Princeton, NJ' },
               { name: 'Angela M.', text: 'After getting 5 quotes, Skyline was not the cheapest but they were by far the most professional and thorough. They found issues the other contractors missed and their warranty was significantly better. Worth every penny for the peace of mind.', loc: 'Westfield, NJ' },
             ].map((r) => (
-              <div key={r.name} className="card" style={{ padding: '2rem' }}>
+              <div key={r.name} className="card hover-lift" style={{ padding: '2rem' }}>
                 <div className="stars" style={{ marginBottom: '1rem' }}>★★★★★</div>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1.5rem', fontStyle: 'italic' }}>{r.text}</p>
                 <div style={{ fontWeight: 600, fontSize: '0.9rem' }}>{r.name}</div>
@@ -321,7 +321,7 @@ export default function RoofingPage() {
             </div>
           </div>
           <div className="reveal-scale">
-            <div className="card" style={{ padding: '2rem', borderRadius: '6px' }}>
+            <div className="card hover-lift" style={{ padding: '2rem', borderRadius: '6px' }}>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 700, textTransform: 'none', marginBottom: '1.5rem' }}>Free Roof Estimate</h3>
               {formSubmitted ? (
                 <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
