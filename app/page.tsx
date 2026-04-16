@@ -57,7 +57,7 @@ export default function RoofingPage() {
             {['Services', 'Materials', 'Financing', 'Gallery', 'Reviews', 'Contact'].map((item) => (
               <button key={item} style={{ fontFamily: 'var(--font-heading)', fontSize: '0.82rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-secondary)', background: 'none', border: 'none', cursor: 'pointer' }} onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}>{item}</button>
             ))}
-            <button className="btn-primary" style={{ padding: '10px 24px' }}>Free Estimate</button>
+            <button className="project-btn-primary" style={{ padding: '10px 24px' }}>Free Estimate</button>
           </div>
         </div>
       </nav>
@@ -81,8 +81,8 @@ export default function RoofingPage() {
               Whether you need a simple leak repair or a complete tear-off and re-roof, our experienced crews deliver flawless workmanship backed by industry-leading warranties up to 50 years. We handle everything from insurance claims assistance to final cleanup, making the roofing process stress-free for homeowners.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-              <button className="btn-primary">Get Free Estimate</button>
-              <button className="btn-outline">Storm Damage Help</button>
+              <button className="project-btn-primary">Get Free Estimate</button>
+              <button className="project-btn-outline">Storm Damage Help</button>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem', marginTop: '3rem' }}>
               {[
@@ -177,7 +177,7 @@ export default function RoofingPage() {
                   </div>
                 ))}
               </div>
-              <button className="btn-primary">Get Quote for {materials[activeMaterial].name}</button>
+              <button className="project-btn-primary">Get Quote for {materials[activeMaterial].name}</button>
             </div>
           </div>
         </div>
@@ -228,7 +228,7 @@ export default function RoofingPage() {
                 <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 700, textTransform: 'none', letterSpacing: '0.04em', marginBottom: '0.25rem' }}>{option.title}</h3>
                 <div style={{ fontFamily: 'var(--font-heading)', fontSize: '0.9rem', fontWeight: 600, color: 'var(--accent)', marginBottom: '1rem' }}>{option.period}</div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.65, marginBottom: '1.5rem' }}>{option.desc}</p>
-                <button className="btn-outline" style={{ width: '100%', fontSize: '0.8rem' }}>Apply Now</button>
+                <button className="project-btn-outline" style={{ width: '100%', fontSize: '0.8rem' }}>Apply Now</button>
               </div>
             ))}
           </div>
@@ -352,7 +352,7 @@ export default function RoofingPage() {
                     <option>Unknown</option>
                   </select>
                   <textarea placeholder="Describe your roofing needs..." rows={4} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} style={{ resize: 'vertical' }} />
-                  <button type="submit" className="btn-primary" style={{ width: '100%' }}>Request Free Estimate</button>
+                  <button type="submit" className="project-btn-primary" style={{ width: '100%' }}>Request Free Estimate</button>
                 </form>
               )}
             </div>
