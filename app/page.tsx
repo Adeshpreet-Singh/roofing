@@ -64,41 +64,40 @@ export default function RoofingPage() {
         </div>
       </section>
 
-      <section className="section reveal" style={ background: 'var(--bg-secondary)' }>
-        <div className="container" style={ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }>
+      <section className="section reveal" style={{  background: 'var(--bg-secondary)'  }}>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center'  }}>
           <div>
-            <h2 style={ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1.5rem'  }}>
               About Our Roofing Services Company
             </h2>
-            <p style={ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem' }>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '1.5rem'  }}>
               Founded in 2015, we've grown from a small startup to a leading roofing services provider. 
               Our mission is to deliver exceptional value through innovative solutions and personalized service.
             </p>
-            <p style={ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '2rem' }>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', marginBottom: '2rem'  }}>
               We believe in building long-term partnerships with our clients, understanding their unique needs, 
               and delivering results that exceed expectations. Our team of experts brings decades of combined experience.
             </p>
-            <div style={ display: 'flex', gap: '2rem', flexWrap: 'wrap' }>
+            <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap'  }}>
               <div>
-                <div style={ fontSize: '2rem', fontWeight: 'bold', color: '#374151' }>150+</div>
-                <div style={ color: 'var(--text-muted)' }>Happy Clients</div>
+                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#374151'  }}>150+</div>
+                <div style={{ color: 'var(--text-muted)'  }}>Happy Clients</div>
               </div>
               <div>
-                <div style={ fontSize: '2rem', fontWeight: 'bold', color: '#374151' }>98%</div>
-                <div style={ color: 'var(--text-muted)' }>Satisfaction Rate</div>
+                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#374151'  }}>98%</div>
+                <div style={{ color: 'var(--text-muted)'  }}>Satisfaction Rate</div>
               </div>
               <div>
-                <div style={ fontSize: '2rem', fontWeight: 'bold', color: '#374151' }>10+</div>
-                <div style={ color: 'var(--text-muted)' }>Years Experience</div>
+                <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#374151'  }}>10+</div>
+                <div style={{ color: 'var(--text-muted)'  }}>Years Experience</div>
               </div>
             </div>
           </div>
-          <div style={ position: 'relative' }>
+          <div style={{ position: 'relative'  }}>
             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" 
                  alt="Our team" 
-                 style={ borderRadius: '1rem', width: '100%', height: 'auto' } />
-            <div style={ 
-              position: 'absolute', 
+                 style={{ borderRadius: '1rem', width: '100%', height: 'auto'  }} />
+            <div style={{ position: 'absolute', 
               bottom: '-1rem', 
               right: '-1rem', 
               background: '#374151', 
@@ -106,7 +105,7 @@ export default function RoofingPage() {
               padding: '1rem 1.5rem',
               borderRadius: '0.5rem',
               fontWeight: 'bold'
-            }>
+             }}>
               Since 2015
             </div>
           </div>
