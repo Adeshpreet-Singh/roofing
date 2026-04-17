@@ -1,236 +1,597 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
+ const [menuOpen, setMenuOpen] = useState(false);
+ const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) { element.scrollIntoView({ behavior: 'smooth' }); element.focus(); }
-    setMenuOpen(false);
-  };
+ const scrollToSection = (id: string) => {
+ const el = document.getElementById(id);
+ if (el) {
+ el.scrollIntoView({ behavior: 'smooth' });
+ el.focus();
+ }
+ setMenuOpen(false);
+ };
 
-  const services = [
-    { title: 'Roof Inspection', desc: 'Comprehensive assessment using drone technology and thermal imaging to detect hidden damage.', price: 'Free', icon: '🔍' },
-    { title: 'Roof Repair', desc: 'Leak repair, shingle replacement, flashing fixes, and storm damage restoration.', price: 'From $299', icon: '🔧' },
-    { title: 'Full Replacement', desc: 'Complete tear-off and installation with premium materials. 50-year warranty available.', price: 'From $8,999', icon: '🏠' },
-    { title: 'Emergency Tarp', desc: '24/7 emergency response for storm damage. Temporary protection within 2 hours.', price: 'From $399', icon: '🚨' },
-    { title: 'Gutter Systems', desc: 'Seamless gutter installation, cleaning, and leaf guard systems.', price: 'From $599', icon: '🏗️' },
-    { title: 'Commercial Roofing', desc: 'Flat roof systems, TPO, EPDM, and commercial maintenance programs.', price: 'Custom Quote', icon: '🏢' },
-  ];
+ const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
+ e.preventDefault();
+ setFormStatus('sending');
+ const form = e.currentTarget;
+ const formData = new FormData(form);
+ formData.append('access_key', 'YOUR_WEB3FORMS_ACCESS_KEY');
 
-  const testimonials = [
-    { name: 'Thomas Baker', role: 'Homeowner', text: 'Skyline replaced our 25-year-old roof in just 2 days. The crew was clean, professional, and the final result exceeded expectations. Our home value increased immediately.', rating: 5 },
-    { name: 'Patricia Nguyen', role: 'Property Developer', text: 'We use Skyline for all our development projects. Their pricing is competitive, their work is impeccable, and they always finish on schedule. Highly recommend.', rating: 5 },
-    { name: 'Michael Torres', role: 'Restaurant Owner', text: 'Had a major leak during a storm at 2 AM. Skyline had a crew there within 90 minutes with emergency tarps. They saved our kitchen and dining area from major damage.', rating: 5 },
-  ];
+ try {
+ const res = await fetch('https://api.web3forms.com/submit', {
+ method: 'POST',
+ body: formData,
+ });
+ const data = await res.json();
+ if (data.success) {
+ setFormStatus('sent');
+ form.reset();
+ } else {
+ setFormStatus('error');
+ }
+ } catch {
+ setFormStatus('error');
+ }
+ };
 
-  return (
-    <div className="min-h-screen px-4 md:px-8">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-neon text-dark px-4 py-2 rounded-lg z-[100] focus-visible:outline-2 focus-visible:outline-white font-bold px-4 md:px-8">Skip to main content</a>
+ const navItems = ['Services', 'Gallery', 'About', 'Reviews', 'Contact'];
 
-      <header>
-        <nav role="navigation" aria-label="Main navigation" className="fixed top-0 left-0 right-0 z-50 glass px-4 md:px-8">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center px-4 md:px-8">
-            <div className="flex items-center gap-3 px-4 md:px-8">
-              <div className="w-10 h-10 bg-neon/20 rounded-xl flex items-center justify-center text-neon text-xl neon-glow px-4 md:px-8" aria-hidden="true">🏠</div>
-              <div><h1 className="text-lg font-bold text-white px-4 md:px-8" style={{ fontSize: "3rem", fontWeight: "bold", marginBottom: "1.5rem", lineHeight: "1.2" }}>Skyline</h1><p className="text-[9px] text-neon tracking-widest px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>ROOFING</p></div>
-            </div>
-            <div className="hidden md:flex items-center gap-8 px-4 md:px-8">
-              {['Services','About','Reviews','Contact'].map(item => (<button key={item} onClick={() = style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}> scrollToSection(item.toLowerCase())} aria-label={`Navigate to ${item} section`} className="text-sm text-slate-text hover:text-neon transition-colors focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2 rounded px-4 md:px-8">{item}</button>))}
-              <button aria-label="Get a free roof inspection" className="bg-neon text-dark px-6 py-2.5 rounded-full text-sm font-bold hover:bg-neon-dim transition-colors focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2 px-4 md:px-8" style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}>Free Inspection</button>
-            </div>
-            <button aria-label={menuOpen?"Close menu":"Open menu"} aria-expanded={menuOpen} className="md:hidden text-neon focus-visible:outline-2 focus-visible:outline-neon rounded px-4 md:px-8" onClick={() = style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}> setMenuOpen(!menuOpen)}>
-              <svg className="w-6 h-6 px-4 md:px-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">{menuOpen?<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/ style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>:<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/ style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>}</svg>
-            </button>
-          </div>
-          {menuOpen && (
-            <div className="md:hidden glass border-t border-dark-border px-6 py-4 space-y-4 px-4 md:px-8">
-              {['Services','About','Reviews','Contact'].map(item => (<button key={item} onClick={() = style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}> scrollToSection(item.toLowerCase())} className="block w-full text-left text-slate-text hover:text-neon py-2 px-4 md:px-8">{item}</button>))}
-              <button className="w-full bg-neon text-dark px-6 py-3 rounded-full font-bold px-4 md:px-8" style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}>Free Inspection</button>
-            </div>
-          )}
-        </nav>
-      </header>
+ const services = [
+ {
+ title: 'Roof Inspection',
+ desc: 'Comprehensive assessment using drone technology and thermal imaging to detect hidden damage before it becomes costly.',
+ price: 'Free',
+ icon: '🔍',
+ img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80',
+ },
+ {
+ title: 'Roof Repair',
+ desc: 'Leak repair, shingle replacement, flashing fixes, and storm damage restoration. Same-day service available.',
+ price: 'From $299',
+ icon: '🔧',
+ img: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?w=400&q=80',
+ },
+ {
+ title: 'Full Replacement',
+ desc: 'Complete tear-off and installation with premium materials. 50-year warranty on all new roofs.',
+ price: 'From $8,999',
+ icon: '🏠',
+ img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80',
+ },
+ {
+ title: 'Gutter Systems',
+ desc: 'Seamless gutter installation, cleaning, and leaf guard systems to protect your foundation.',
+ price: 'From $599',
+ icon: '🏗️',
+ img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&q=80',
+ },
+ {
+ title: 'Siding Installation',
+ desc: 'Vinyl, fiber cement, and wood siding installation and repair. Boost curb appeal and energy efficiency.',
+ price: 'From $3,499',
+ icon: '🧱',
+ img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80',
+ },
+ {
+ title: 'Emergency Tarp',
+ desc: '24/7 emergency response for storm damage. Temporary protection within 2 hours of your call.',
+ price: 'From $399',
+ icon: '🚨',
+ img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80',
+ },
+ ];
 
-      <main id="main-content" role="main">
-        <section aria-labelledby="hero-heading" className="pt-24 pb-16 relative overflow-hidden grid-bg px-4 md:px-8" style={{ padding: "5rem 1rem", marginBottom: "2rem" }}>
-          <div className="absolute inset-0 px-4 md:px-8" aria-hidden="true">
-            <div className="absolute top-20 right-20 w-96 h-96 bg-neon/10 rounded-full blur-[120px] px-4 md:px-8"/>
-            <div className="absolute bottom-20 left-20 w-64 h-64 bg-neon/5 rounded-full blur-[100px] px-4 md:px-8"/>
-          </div>
-          <div className="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center px-4 md:px-8">
-            <div>
-              <p className="text-neon text-sm font-bold tracking-widest mb-4 animate-fade-in-up px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>LICENSED ROOFING CONTRACTORS</p>
-              <h2 id="hero-heading" className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-white animate-fade-in-up stagger-1 px-4 md:px-8" style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "1.25rem", lineHeight: "1.3" }}>Protecting What<br/><span className="text-neon neon-text px-4 md:px-8">Matters Most.</span></h2>
-              <p className="text-xl text-slate-text mb-8 max-w-lg animate-fade-in-up stagger-2 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Expert roofing services backed by 50-year warranties. From inspections to complete replacements, we&apos;ve got you covered.</p>
-              <div className="flex flex-wrap gap-4 mb-10 animate-fade-in-up stagger-3 px-4 md:px-8">
-                <button aria-label="Get your free roof inspection" className="bg-neon text-dark px-8 py-4 rounded-full text-lg font-bold hover:bg-neon-dim transition-all hover:scale-105 neon-glow focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2 px-4 md:px-8" style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}>Free Inspection</button>
-                <button aria-label="Call for emergency roofing" className="border-2 border-neon/50 text-neon px-8 py-4 rounded-full text-lg font-bold hover:bg-neon/10 transition-all hover:scale-105 focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2 px-4 md:px-8" style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}>Emergency: 24/7</button>
-              </div>
-              <div className="flex items-center gap-8 px-4 md:px-8">
-                {[{num:'8K+',label:'Roofs Installed'},{num:'50-Year',label:'Warranty'},{num:'24/7',label:'Emergency'}].map((s,i) => (<div key={i}><div className="text-2xl font-bold text-neon px-4 md:px-8">{s.num}</div><div className="text-sm text-slate-text px-4 md:px-8">{s.label}</div></div>))}
-              </div>
-            </div>
-            <div className="relative px-4 md:px-8">
-              <div className="glass rounded-3xl p-8 neon-glow px-4 md:px-8">
-                <img src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=600&q=80" alt="Professional roofing work on a residential home" className="w-full rounded-2xl opacity-90 px-4 md:px-8"/>
-              </div>
-            </div>
-          </div>
-        </section>
+ const gallery = [
+ { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80', label: 'Residential Re-Roof', alt: 'Completed residential roof replacement' },
+ { src: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?w=600&q=80', label: 'Commercial Flat Roof', alt: 'Commercial flat roof installation' },
+ { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80', label: 'Storm Damage Repair', alt: 'Storm damage roof repair' },
+ { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80', label: 'Siding & Gutters', alt: 'New siding and gutter installation' },
+ { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80', label: 'Gutter System', alt: 'Seamless gutter system installation' },
+ { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80', label: 'Tile Roof Restoration', alt: 'Tile roof restoration project' },
+ ];
 
-        <section id="services" aria-labelledby="services-heading" className="py-24 relative px-4 md:px-8" style={{ padding: "5rem 1rem", marginBottom: "2rem" }}>
-          <div className="max-w-7xl mx-auto px-6 px-4 md:px-8">
-            <div className="text-center mb-16 px-4 md:px-8">
-              <p className="text-neon text-sm font-bold tracking-widest mb-4 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>WHAT WE DO</p>
-              <h2 id="services-heading" className="text-4xl font-bold text-white mb-4 px-4 md:px-8" style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "1.25rem", lineHeight: "1.3" }}>Roofing Services</h2>
-              <p className="text-slate-text max-w-2xl mx-auto px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Complete roofing solutions for residential and commercial properties. Quality materials, expert installation.</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8">
-              {services.map((s,i) => (
-                <article key={i} className="glass rounded-2xl p-6 hover:border-neon/30 transition-all hover:scale-105 group px-4 md:px-8">
-                  <div className="text-4xl mb-4 px-4 md:px-8" aria-hidden="true">{s.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors px-4 md:px-8" style={{ fontSize: "1.5rem", fontWeight: "600", marginBottom: "1rem", lineHeight: "1.4" }}>{s.title}</h3>
-                  <p className="text-slate-text text-sm mb-3 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>{s.desc}</p>
-                  <div className="text-neon font-bold text-sm px-4 md:px-8">{s.price}</div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+ const testimonials = [
+ {
+ name: 'Thomas Baker',
+ role: 'Homeowner',
+ text: 'Skyline replaced our 25-year-old roof in just 2 days. The crew was clean, professional, and the final result exceeded expectations. Our home value increased immediately.',
+ rating: 5,
+ },
+ {
+ name: 'Patricia Nguyen',
+ role: 'Property Developer',
+ text: 'We use Skyline for all our development projects. Their pricing is competitive, their work is impeccable, and they always finish on schedule. Highly recommend.',
+ rating: 5,
+ },
+ {
+ name: 'Michael Torres',
+ role: 'Restaurant Owner',
+ text: 'Had a major leak during a storm at 2 AM. Skyline had a crew there within 90 minutes with emergency tarps. They saved our kitchen and dining area from major damage.',
+ rating: 5,
+ },
+ ];
 
-        <section id="about" aria-labelledby="about-heading" className="py-24 relative px-4 md:px-8" style={{ padding: "5rem 1rem", marginBottom: "2rem" }}>
-          <div className="absolute inset-0 px-4 md:px-8" aria-hidden="true">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon/5 rounded-full blur-[150px] px-4 md:px-8"/>
-          </div>
-          <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center px-4 md:px-8">
-            <div className="glass rounded-3xl p-8 px-4 md:px-8">
-              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Skyline Roofing team at work" className="w-full rounded-2xl opacity-90 px-4 md:px-8"/>
-            </div>
-            <div>
-              <p className="text-neon text-sm font-bold tracking-widest mb-4 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>WHY SKYLINE</p>
-              <h2 id="about-heading" className="text-4xl font-bold text-white mb-6 px-4 md:px-8" style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "1.25rem", lineHeight: "1.3" }}>8,000+ Roofs & Counting</h2>
-              <p className="text-slate-text mb-8 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Skyline Roofing has been the trusted name in roofing since 2005. Our GAF Master Elite certification places us in the top 2% of roofers nationwide. Every project comes with comprehensive warranties.</p>
-              <div className="grid grid-cols-2 gap-4 px-4 md:px-8">
-                {[
-                  { icon: '✓', text: 'Licensed & Insured' },
-                  { icon: '✓', text: 'GAF Master Elite' },
-                  { icon: '✓', text: '50-Year Warranty' },
-                  { icon: '✓', text: 'Free Inspections' },
-                  { icon: '✓', text: 'Financing Available' },
-                  { icon: '✓', text: 'Drone Inspections' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 px-4 md:px-8">
-                    <span className="text-neon px-4 md:px-8" aria-hidden="true">{item.icon}</span>
-                    <span className="text-sm text-white-soft px-4 md:px-8">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+ const financingOptions = [
+ { months: '12', rate: '0%', payment: '$0 down', desc: 'Same-as-cash financing with no interest for 12 months.' },
+ { months: '60', rate: '4.99%', payment: 'Low monthly', desc: 'Extended financing at a low fixed rate for larger projects.' },
+ { months: '84', rate: '6.99%', payment: 'Affordable', desc: 'Maximum flexibility with affordable monthly payments.' },
+ ];
 
-        <section id="reviews" aria-labelledby="reviews-heading" className="py-24 relative px-4 md:px-8" style={{ padding: "5rem 1rem", marginBottom: "2rem" }}>
-          <div className="max-w-7xl mx-auto px-6 px-4 md:px-8">
-            <div className="text-center mb-16 px-4 md:px-8">
-              <p className="text-neon text-sm font-bold tracking-widest mb-4 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>TESTIMONIALS</p>
-              <h2 id="reviews-heading" className="text-4xl font-bold text-white mb-4 px-4 md:px-8" style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "1.25rem", lineHeight: "1.3" }}>What Our Clients Say</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 px-4 md:px-8">
-              {testimonials.map((t, i) => (
-                <article key={i} className="glass rounded-2xl p-6 px-4 md:px-8">
-                  <div className="flex gap-1 mb-4 px-4 md:px-8" aria-label={`${t.rating} out of 5 stars`}>
-                    {[...Array(t.rating)].map((_, j) => (
-                      <span key={j} className="text-amber px-4 md:px-8" aria-hidden="true">★</span>
-                    ))}
-                  </div>
-                  <p className="text-white-soft mb-6 italic px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>&ldquo;{t.text}&rdquo;</p>
-                  <div>
-                    <p className="font-bold text-white px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>{t.name}</p>
-                    <p className="text-sm text-slate-text px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>{t.role}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+ const serviceArea = [
+ 'Downtown Metro', 'Westside Heights', 'Northgate', 'Lakewood',
+ 'Riverside', 'Sunnyvale', 'Oak Park', 'Pine Hills',
+ 'Eastborough', 'Fairview', 'Brookdale', 'Cedar Creek',
+ ];
 
-        <section id="contact" aria-labelledby="contact-heading" className="py-24 relative px-4 md:px-8" style={{ padding: "5rem 1rem", marginBottom: "2rem" }}>
-          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 px-4 md:px-8">
-            <div>
-              <p className="text-neon text-sm font-bold tracking-widest mb-4 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>GET PROTECTED</p>
-              <h2 id="contact-heading" className="text-4xl font-bold text-white mb-6 px-4 md:px-8" style={{ fontSize: "2.25rem", fontWeight: "bold", marginBottom: "1.25rem", lineHeight: "1.3" }}>Schedule Your Free Inspection</h2>
-              <p className="text-slate-text mb-8 px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Our certified inspectors will assess your roof condition and provide a detailed report with recommendations at no cost.</p>
-              <div className="space-y-4 px-4 md:px-8">
-                <div className="flex items-center gap-4 px-4 md:px-8">
-                  <div className="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center text-neon px-4 md:px-8" aria-hidden="true">📞</div>
-                  <div><p className="text-sm text-slate-text px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>24/7 Emergency Line</p><p className="text-white font-bold px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>(555) 456-ROOF</p></div>
-                </div>
-                <div className="flex items-center gap-4 px-4 md:px-8">
-                  <div className="w-12 h-12 bg-neon/10 rounded-xl flex items-center justify-center text-neon px-4 md:px-8" aria-hidden="true">📍</div>
-                  <div><p className="text-sm text-slate-text px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Service Area</p><p className="text-white font-bold px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Greater Metro Area</p></div>
-                </div>
-              </div>
-            </div>
-            <div className="glass rounded-2xl p-8 px-4 md:px-8">
-              <form noValidate className="space-y-6 px-4 md:px-8">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-white-soft mb-2 px-4 md:px-8">Your Name</label>
-                  <input id="name" type="text" aria-required="true" placeholder="John Smith" className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white placeholder-slate-text/50 focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors px-4 md:px-8"/>
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-white-soft mb-2 px-4 md:px-8">Phone</label>
-                  <input id="phone" type="tel" aria-required="true" placeholder="(555) 000-0000" className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white placeholder-slate-text/50 focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors px-4 md:px-8"/>
-                </div>
-                <div>
-                  <label htmlFor="service-type" className="block text-sm font-medium text-white-soft mb-2 px-4 md:px-8">Service Needed</label>
-                  <select id="service-type" className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors px-4 md:px-8">
-                    <option value="">Select service</option>
-                    <option value="inspection">Roof Inspection</option>
-                    <option value="repair">Roof Repair</option>
-                    <option value="replacement">Full Replacement</option>
-                    <option value="emergency">Emergency Service</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="details" className="block text-sm font-medium text-white-soft mb-2 px-4 md:px-8">Describe Your Roof Issue</label>
-                  <textarea id="details" rows={3} placeholder="Tell us about your roofing needs..." className="w-full bg-dark-card border border-dark-border rounded-xl px-4 py-3 text-white placeholder-slate-text/50 focus:border-neon focus:ring-1 focus:ring-neon focus:outline-none transition-colors resize-none px-4 md:px-8"/>
-                </div>
-                <button type="submit" aria-label="Schedule your free roof inspection" className="w-full bg-neon text-dark py-4 rounded-xl font-bold hover:bg-neon-dim transition-all hover:scale-[1.02] neon-glow focus-visible:outline-2 focus-visible:outline-neon focus-visible:outline-offset-2 px-4 md:px-8" style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "var(--primary)", color: "white", border: "none", cursor: "pointer", transition: "transform 0.2s, box-shadow 0.2s" }}>Schedule Free Inspection</button>
-              </form>
-            </div>
-          </div>
-        </section>
-      
-      <section style={{ padding: "5rem 1rem", background: "var(--primary)", color: "white", textAlign: "center" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-          <h2 style={{ fontSize: "2.5rem", fontWeight: "bold", marginBottom: "1rem" }}>Ready to Get Started?</h2>
-          <p style={{ fontSize: "1.25rem", marginBottom: "2rem", opacity: 0.9 }}>Contact us today to discuss your project and get a free consultation.</p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <button style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "white", color: "var(--primary)", border: "none", cursor: "pointer" }}>Get Free Quote</button>
-            <button style={{ padding: "1rem 2rem", fontSize: "1.125rem", fontWeight: "600", borderRadius: "0.5rem", background: "transparent", color: "white", border: "2px solid white", cursor: "pointer" }}>Schedule a Call</button>
-          </div>
-        </div>
-      </section>
+ return (
+ <div className="min-h-screen">
+ {/* ===== NAV ===== */}
+ <header>
+ <nav role="navigation" aria-label="Main navigation" className="nav-sticky">
+ <div className="nav-inner">
+ <div className="flex items-center gap-3">
+ <div className="nav-logo" aria-hidden="true">🏠</div>
+ <div>
+ <h1 className="nav-brand">Skyline</h1>
+ <p className="nav-sub">ROOFING</p>
+ </div>
+ </div>
 
-  </main>
+ <div className="nav-links">
+ {navItems.map((item) => (
+ <button
+ key={item}
+ onClick={() => scrollToSection(item.toLowerCase())}
+ aria-label={`Navigate to ${item} section`}
+ className="nav-link"
+ >
+ {item}
+ </button>
+ ))}
+ <a href="tel:+15554567663" className="btn-primary nav-cta">
+ Free Inspection
+ </a>
+ </div>
 
-      <footer role="contentinfo" className="py-12 border-t border-dark-border px-4 md:px-8">
-        <div className="max-w-7xl mx-auto px-6 px-4 md:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 px-4 md:px-8">
-            <div className="flex items-center gap-3 px-4 md:px-8">
-              <div className="w-8 h-8 bg-neon/20 rounded-lg flex items-center justify-center text-neon px-4 md:px-8" aria-hidden="true">🏠</div>
-              <span className="text-white font-bold px-4 md:px-8">Skyline Roofing</span>
-            </div>
-            <p className="text-slate-text text-sm px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>Licensed & Insured | GAF Master Elite | NRCA Member</p>
-          </div>
-          <div className="mt-8 pt-8 border-t border-dark-border text-center px-4 md:px-8">
-            <p className="text-slate-text/60 text-xs px-4 md:px-8" style={{ fontSize: "1.125rem", lineHeight: "1.7", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>© 2024 Skyline Roofing. All rights reserved. Contractor License #RC-2005-3341</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+ <button
+ aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+ aria-expanded={menuOpen}
+ className="nav-mobile-toggle"
+ onClick={() => setMenuOpen(!menuOpen)}
+ >
+ <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+ {menuOpen ? (
+ <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+ ) : (
+ <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+ )}
+ </svg>
+ </button>
+ </div>
+
+ {menuOpen && (
+ <div className="nav-mobile-menu">
+ {navItems.map((item) => (
+ <button
+ key={item}
+ onClick={() => scrollToSection(item.toLowerCase())}
+ className="nav-mobile-link"
+ >
+ {item}
+ </button>
+ ))}
+ <a href="tel:+15554567663" className="btn-primary w-full text-center">
+ Free Inspection
+ </a>
+ </div>
+ )}
+ </nav>
+ </header>
+
+ <main id="main-content" role="main">
+ {/* ===== HERO ===== */}
+ <section aria-labelledby="hero-heading" className="hero-section">
+ <div className="hero-bg-pattern" aria-hidden="true">
+ <div className="hero-glow hero-glow-1" />
+ <div className="hero-glow hero-glow-2" />
+ </div>
+ <div className="hero-inner">
+ <div className="hero-text">
+ <p className="badge reveal">LICENSED ROOFING CONTRACTORS</p>
+ <h2 id="hero-heading" className="hero-title reveal stagger-1">
+ Protecting What<br />
+ <span className="gradient-text">Matters Most.</span>
+ </h2>
+ <p className="hero-desc reveal stagger-2">
+ Expert roofing services backed by 50-year warranties. From inspections to complete
+ replacements, we&apos;ve got you covered — rain or shine.
+ </p>
+ <div className="hero-ctas reveal stagger-3">
+ <a href="tel:+15554567663" className="btn-primary btn-lg">
+ ☎ Free Inspection
+ </a>
+ <a href="tel:+15554567663" className="btn-outline btn-lg">
+ 🚨 Emergency: 24/7
+ </a>
+ </div>
+ <div className="hero-stats reveal stagger-3">
+ <div className="hero-stat">
+ <div className="hero-stat-num">8K+</div>
+ <div className="hero-stat-label">Roofs Installed</div>
+ </div>
+ <div className="hero-stat">
+ <div className="hero-stat-num">50-Year</div>
+ <div className="hero-stat-label">Warranty</div>
+ </div>
+ <div className="hero-stat">
+ <div className="hero-stat-num">24/7</div>
+ <div className="hero-stat-label">Emergency</div>
+ </div>
+ </div>
+ </div>
+ <div className="hero-image reveal-scale">
+ <div className="hero-img-card">
+ <img
+ src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=600&q=80"
+ alt="Professional roofing work on a residential home"
+ />
+ </div>
+ </div>
+ </div>
+ </section>
+
+ {/* ===== STORM DAMAGE CTA ===== */}
+ <section className="storm-cta reveal" aria-label="Storm damage emergency call to action">
+ <div className="storm-cta-inner">
+ <div className="storm-cta-icon" aria-hidden="true">⛈️</div>
+ <div className="storm-cta-text">
+ <h2 className="storm-cta-title">Storm Damage?</h2>
+ <p className="storm-cta-desc">
+ Don&apos;t wait — water damage spreads fast. Our emergency crew responds within 2 hours, day or night.
+ </p>
+ </div>
+ <a href="tel:+15554567663" className="btn-primary btn-lg storm-cta-btn">
+ 🚨 Call Now: (555) 456-ROOF
+ </a>
+ </div>
+ </section>
+
+ {/* ===== SERVICES ===== */}
+ <section id="services" aria-labelledby="services-heading" className="section">
+ <div className="section-inner">
+ <div className="section-header">
+ <p className="badge reveal">WHAT WE DO</p>
+ <h2 id="services-heading" className="section-title reveal">Roofing Services</h2>
+ <p className="section-desc reveal">
+ Complete roofing solutions for residential and commercial properties. Quality materials, expert installation, lasting results.
+ </p>
+ </div>
+ <div className="services-grid stagger-children">
+ {services.map((s, i) => (
+ <article key={i} className="service-card">
+ <div className="service-card-img-wrap">
+ <img src={s.img} alt={s.title} className="service-card-img" />
+ </div>
+ <div className="service-card-body">
+ <div className="service-card-icon" aria-hidden="true">{s.icon}</div>
+ <h3 className="service-card-title">{s.title}</h3>
+ <p className="service-card-desc">{s.desc}</p>
+ <div className="service-card-price">{s.price}</div>
+ </div>
+ </article>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ {/* ===== BEFORE/AFTER GALLERY ===== */}
+ <section id="gallery" aria-labelledby="gallery-heading" className="section section-alt">
+ <div className="section-inner">
+ <div className="section-header">
+ <p className="badge reveal">OUR WORK</p>
+ <h2 id="gallery-heading" className="section-title reveal">Project Gallery</h2>
+ <p className="section-desc reveal">
+ See the difference expert craftsmanship makes. Every project backed by our satisfaction guarantee.
+ </p>
+ </div>
+ <div className="gallery-grid stagger-children">
+ {gallery.map((item, i) => (
+ <div key={i} className="gallery-item">
+ <img src={item.src} alt={item.alt} />
+ <span className="gallery-label">{item.label}</span>
+ </div>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ {/* ===== ABOUT / WHY SKYLINE ===== */}
+ <section id="about" aria-labelledby="about-heading" className="section">
+ <div className="section-inner">
+ <div className="about-grid">
+ <div className="about-img-wrap reveal-left">
+ <img
+ src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+ alt="Skyline Roofing team at work on a residential project"
+ />
+ </div>
+ <div className="about-content">
+ <p className="badge reveal">WHY SKYLINE</p>
+ <h2 id="about-heading" className="section-title reveal">8,000+ Roofs & Counting</h2>
+ <p className="section-desc reveal">
+ Skyline Roofing has been the trusted name in roofing since 2005. Our GAF Master Elite
+ certification places us in the top 2% of roofers nationwide. Every project comes with
+ comprehensive warranties and our satisfaction guarantee.
+ </p>
+ <div className="checklist reveal">
+ {[
+ 'Licensed & Insured',
+ 'GAF Master Elite Certified',
+ '50-Year Warranty Available',
+ 'Free Inspections',
+ 'Financing Available',
+ 'Drone & Thermal Inspections',
+ ].map((item, i) => (
+ <div key={i} className="check-item">
+ <span className="check-icon" aria-hidden="true">✓</span>
+ <span>{item}</span>
+ </div>
+ ))}
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ {/* ===== FINANCING ===== */}
+ <section aria-labelledby="financing-heading" className="section section-alt">
+ <div className="section-inner">
+ <div className="section-header">
+ <p className="badge reveal">FLEXIBLE PAYMENTS</p>
+ <h2 id="financing-heading" className="section-title reveal">Financing Options</h2>
+ <p className="section-desc reveal">
+ Don&apos;t let budget delay critical roof repairs. We offer flexible financing with approved credit.
+ </p>
+ </div>
+ <div className="finance-grid stagger-children">
+ {financingOptions.map((opt, i) => (
+ <div key={i} className="finance-option">
+ <div className="finance-rate">{opt.rate}</div>
+ <div className="finance-term">{opt.months} Months</div>
+ <div className="finance-payment">{opt.payment}</div>
+ <p className="finance-desc">{opt.desc}</p>
+ </div>
+ ))}
+ </div>
+ <div className="section-cta reveal">
+ <a href="tel:+15554567663" className="btn-outline">
+ Ask About Financing
+ </a>
+ </div>
+ </div>
+ </section>
+
+ {/* ===== REVIEWS ===== */}
+ <section id="reviews" aria-labelledby="reviews-heading" className="section">
+ <div className="section-inner">
+ <div className="section-header">
+ <p className="badge reveal">TESTIMONIALS</p>
+ <h2 id="reviews-heading" className="section-title reveal">What Our Clients Say</h2>
+ </div>
+ <div className="reviews-grid stagger-children">
+ {testimonials.map((t, i) => (
+ <article key={i} className="review-card">
+ <div className="stars" aria-label={`${t.rating} out of 5 stars`}>
+ {[...Array(t.rating)].map((_, j) => (
+ <span key={j} aria-hidden="true">★</span>
+ ))}
+ </div>
+ <p className="review-text">&ldquo;{t.text}&rdquo;</p>
+ <div className="review-author">
+ <p className="review-name">{t.name}</p>
+ <p className="review-role">{t.role}</p>
+ </div>
+ </article>
+ ))}
+ </div>
+ </div>
+ </section>
+
+ {/* ===== SERVICE AREA ===== */}
+ <section aria-labelledby="area-heading" className="section section-alt">
+ <div className="section-inner">
+ <div className="section-header">
+ <p className="badge reveal">WHERE WE WORK</p>
+ <h2 id="area-heading" className="section-title reveal">Service Area</h2>
+ <p className="section-desc reveal">
+ Proudly serving the greater metro area and surrounding communities within a 50-mile radius.
+ </p>
+ </div>
+ <div className="area-content">
+ <div className="area-map reveal-left">
+ <iframe
+ title="Skyline Roofing service area map"
+ src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2!2d-73.98!3d40.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzAwLjAiTiA3M8KwNTgnNDguMCJX!5e0!3m2!1sen!2sus!4v1"
+ width="100%"
+ height="350"
+
+ allowFullScreen
+ loading="lazy"
+ referrerPolicy="no-referrer-when-downgrade"
+ />
+ </div>
+ <div className="area-list reveal">
+ <h3 className="area-list-title">Communities We Serve</h3>
+ <div className="area-tags">
+ {serviceArea.map((area, i) => (
+ <span key={i} className="area-tag">{area}</span>
+ ))}
+ </div>
+ <p className="area-note">
+ Don&apos;t see your area? <a href="tel:+15554567663">Call us</a> — we likely serve your neighborhood.
+ </p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ {/* ===== CONTACT ===== */}
+ <section id="contact" aria-labelledby="contact-heading" className="section">
+ <div className="section-inner">
+ <div className="section-header">
+ <p className="badge reveal">GET PROTECTED</p>
+ <h2 id="contact-heading" className="section-title reveal">Schedule Your Free Inspection</h2>
+ <p className="section-desc reveal">
+ Our certified inspectors will assess your roof condition and provide a detailed report
+ with recommendations at absolutely no cost.
+ </p>
+ </div>
+ <div className="contact-grid">
+ <div className="contact-info reveal-left">
+ <div className="contact-item">
+ <div className="contact-icon" aria-hidden="true">📞</div>
+ <div>
+ <p className="contact-label">24/7 Emergency Line</p>
+ <a href="tel:+15554567663" className="contact-value">(555) 456-ROOF</a>
+ </div>
+ </div>
+ <div className="contact-item">
+ <div className="contact-icon" aria-hidden="true">✉️</div>
+ <div>
+ <p className="contact-label">Email Us</p>
+ <a href="mailto:info@skylineroofing.com" className="contact-value">info@skylineroofing.com</a>
+ </div>
+ </div>
+ <div className="contact-item">
+ <div className="contact-icon" aria-hidden="true">📍</div>
+ <div>
+ <p className="contact-label">Office Location</p>
+ <p className="contact-value">123 Skyline Dr, Suite 100<br />Metro City, ST 10001</p>
+ </div>
+ </div>
+ <div className="contact-item">
+ <div className="contact-icon" aria-hidden="true">🕐</div>
+ <div>
+ <p className="contact-label">Business Hours</p>
+ <p className="contact-value">
+ Mon–Fri: 7:00 AM – 7:00 PM<br />
+ Sat: 8:00 AM – 4:00 PM<br />
+ Sun: Emergency Only
+ </p>
+ </div>
+ </div>
+
+ {/* Social links */}
+ <div className="social-links">
+ <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">FB</a>
+ <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">IG</a>
+ <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="social-link">X</a>
+ <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">LI</a>
+ <a href="https://wa.me/15554567663" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-link">WA</a>
+ </div>
+ </div>
+
+ <div className="contact-form-wrap reveal">
+ <form onSubmit={handleFormSubmit} noValidate className="contact-form">
+ <input type="hidden" name="subject" value="New Roof Inspection Request — Skyline Roofing" />
+ <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" />
+
+ <div className="form-field">
+ <label htmlFor="name">Your Name</label>
+ <input id="name" name="name" type="text" required placeholder="John Smith" />
+ </div>
+ <div className="form-field">
+ <label htmlFor="email">Email</label>
+ <input id="email" name="email" type="email" required placeholder="john@example.com" />
+ </div>
+ <div className="form-field">
+ <label htmlFor="phone">Phone</label>
+ <input id="phone" name="phone" type="tel" required placeholder="(555) 000-0000" />
+ </div>
+ <div className="form-field">
+ <label htmlFor="service-type">Service Needed</label>
+ <select id="service-type" name="service" required>
+ <option value="">Select a service</option>
+ <option value="inspection">Roof Inspection</option>
+ <option value="repair">Roof Repair</option>
+ <option value="replacement">Full Replacement</option>
+ <option value="gutters">Gutter Systems</option>
+ <option value="siding">Siding</option>
+ <option value="emergency">Emergency Service</option>
+ </select>
+ </div>
+ <div className="form-field">
+ <label htmlFor="details">Describe Your Roof Issue</label>
+ <textarea id="details" name="message" rows={4} placeholder="Tell us about your roofing needs..." />
+ </div>
+ <button
+ type="submit"
+ className="btn-primary btn-lg w-full"
+ disabled={formStatus === 'sending'}
+ >
+ {formStatus === 'sending' ? 'Sending...' : formStatus === 'sent' ? '✓ Sent! We\'ll call you soon.' : 'Schedule Free Inspection'}
+ </button>
+ {formStatus === 'error' && (
+ <p className="form-error">Something went wrong. Please call us at (555) 456-ROOF.</p>
+ )}
+ </form>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ {/* ===== FINAL CTA ===== */}
+ <section className="final-cta reveal" aria-label="Ready to get started call to action">
+ <div className="final-cta-inner">
+ <h2 className="final-cta-title">Ready to Protect Your Home?</h2>
+ <p className="final-cta-desc">
+ Get a free, no-obligation roof inspection from our certified experts today.
+ </p>
+ <div className="final-cta-buttons">
+ <a href="tel:+15554567663" className="btn-primary btn-lg">
+ ☎ Call (555) 456-ROOF
+ </a>
+ <a href="mailto:info@skylineroofing.com" className="btn-outline btn-lg">
+ ✉ Email Us
+ </a>
+ </div>
+ </div>
+ </section>
+ </main>
+
+ {/* ===== FOOTER ===== */}
+ <footer role="contentinfo" className="footer">
+ <div className="footer-inner">
+ <div className="footer-top">
+ <div className="footer-brand">
+ <div className="footer-logo" aria-hidden="true">🏠</div>
+ <span className="footer-name">Skyline Roofing</span>
+ </div>
+ <div className="footer-links">
+ <a href="tel:+15554567663" className="footer-link">(555) 456-ROOF</a>
+ <a href="mailto:info@skylineroofing.com" className="footer-link">info@skylineroofing.com</a>
+ <a href="https://wa.me/15554567663" target="_blank" rel="noopener noreferrer" className="footer-link">WhatsApp</a>
+ </div>
+ <div className="footer-social">
+ <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">FB</a>
+ <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">IG</a>
+ <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="social-link">X</a>
+ <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">LI</a>
+ </div>
+ </div>
+ <div className="footer-certs">
+ Licensed & Insured | GAF Master Elite | NRCA Member
+ </div>
+ <div className="footer-bottom">
+ <p>&copy; 2025 Skyline Roofing. All rights reserved. Contractor License #RC-2005-3341</p>
+ </div>
+ </div>
+ </footer>
+ </div>
+ );
 }
