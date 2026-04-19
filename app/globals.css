@@ -17,9 +17,9 @@
   --card: #141414;
   --card-hover: #1a1a1a;
   --border: #222222;
-  --text: #f0f0f0;
-  --text-secondary: #bbbbbb;
-  --text-muted: #888888;
+  --text: #f5f5f5;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
   --heading: #ffffff;
   --gradient-accent: linear-gradient(135deg, #ff9500, #ffb84d);
   --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
@@ -50,8 +50,9 @@ body {
   font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 400;
+  font-size: 1rem;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -84,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 .badge {
   display: inline-block;
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -186,7 +187,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-sub {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   letter-spacing: 0.35em;
   color: var(--accent);
   font-weight: 600;
@@ -207,7 +208,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   cursor: pointer;
   transition: color 0.3s ease;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0.25rem;
 }
 
 .nav-link:hover,
@@ -216,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-cta {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   padding: 10px 24px;
 }
 
@@ -246,14 +247,14 @@ h1, h2, h3, h4, h5, h6 {
   background: none;
   border: none;
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 500;
   text-align: left;
   padding: 1rem 0;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: color 0.3s ease;
-  min-height: 44px;
+  min-height: 48px;
   display: flex;
   align-items: center;
 }
@@ -277,7 +278,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -306,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid var(--accent);
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   display: inline-block;
   text-decoration: none;
   text-align: center;
@@ -320,7 +321,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-lg {
   padding: 16px 36px;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 /* ========================= */
@@ -349,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   margin-bottom: 1rem;
 }
 
@@ -357,8 +358,8 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   max-width: 680px;
   margin: 0 auto;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
 .section-cta {
@@ -425,10 +426,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-desc {
   color: var(--text-secondary);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   max-width: 500px;
   margin-bottom: 2rem;
-  line-height: 1.75;
+  line-height: 1.8;
   width: 100%;
 }
 
@@ -453,7 +454,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-stat-label {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   margin-top: 0.25rem;
 }
@@ -510,7 +511,7 @@ h1, h2, h3, h4, h5, h6 {
 .storm-cta-desc {
   color: var(--text-secondary);
   max-width: 500px;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .storm-cta-btn {
@@ -572,7 +573,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--heading);
   margin-bottom: 0.5rem;
@@ -587,15 +588,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card-desc {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   margin-bottom: 1rem;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .service-card-price {
   color: var(--accent);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-family: var(--font-heading);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -651,7 +652,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   color: #fff;
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -707,7 +708,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
 }
 
@@ -751,7 +752,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .finance-term {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--heading);
@@ -759,15 +760,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .finance-payment {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   margin-bottom: 0.75rem;
 }
 
 .finance-desc {
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.75;
 }
 
 /* ========================= */
@@ -797,19 +798,19 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-secondary);
   font-style: italic;
   margin-bottom: 1.5rem;
-  line-height: 1.75;
-  font-size: 0.95rem;
+  line-height: 1.8;
+  font-size: 0.97rem;
 }
 
 .review-name {
   font-weight: 700;
   color: var(--heading);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .review-role {
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 /* ========================= */
@@ -835,7 +836,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .area-list-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 1.25rem;
 }
 
@@ -850,15 +851,15 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 149, 0, 0.08);
   border: 1px solid rgba(255, 149, 0, 0.2);
   color: var(--text);
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 500;
 }
 
 .area-note {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .area-note a {
@@ -903,14 +904,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-label {
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin-bottom: 0.15rem;
 }
 
 .contact-value {
   color: var(--heading);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-decoration: none;
   line-height: 1.5;
 }
@@ -927,8 +928,8 @@ a.contact-value:hover {
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   display: flex;
@@ -936,7 +937,7 @@ a.contact-value:hover {
   justify-content: center;
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   font-family: var(--font-heading);
   letter-spacing: 0.05em;
@@ -965,7 +966,7 @@ a.contact-value:hover {
 
 .form-field label {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-secondary);
   margin-bottom: 0.4rem;
@@ -976,12 +977,13 @@ a.contact-value:hover {
 .form-field textarea {
   width: 100%;
   padding: 14px 16px;
+  min-height: 48px;
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--radius);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1005,7 +1007,7 @@ a.contact-value:hover {
 
 .form-error {
   color: #ef4444;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-align: center;
   margin-top: 0.5rem;
 }
@@ -1119,7 +1121,7 @@ a.contact-value:hover {
 .footer-link {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   transition: color 0.3s ease;
 }
 
@@ -1135,7 +1137,7 @@ a.contact-value:hover {
 .footer-certs {
   text-align: center;
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   padding: 1.5rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -1148,7 +1150,7 @@ a.contact-value:hover {
 
 .footer-bottom p {
   color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 /* ========================= */
@@ -1264,21 +1266,30 @@ a.contact-value:hover {
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .hero-desc {
     margin-left: auto;
     margin-right: auto;
     font-size: 1rem;
+    line-height: 1.8;
   }
 
   .hero-ctas {
     justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .hero-ctas .btn-lg {
+    min-width: 200px;
+    min-height: 48px;
   }
 
   .hero-stats {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
 
   .hero-image {
@@ -1326,11 +1337,12 @@ a.contact-value:hover {
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .section-desc {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.8;
   }
 
   .footer-top {
@@ -1351,23 +1363,55 @@ a.contact-value:hover {
   .review-text,
   .finance-desc,
   .area-note {
-    font-size: 0.95rem;
-    line-height: 1.8;
+    font-size: 1rem;
+    line-height: 1.85;
   }
 
   .contact-label,
   .contact-value {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  /* Improve touch targets on mobile */
+  .btn-primary,
+  .btn-outline {
+    min-height: 48px;
+    padding: 14px 28px;
+  }
+
+  .nav-mobile-link {
+    min-height: 48px;
+    font-size: 1.05rem;
+    padding: 1rem 0;
+  }
+
+  .contact-form .btn-primary {
+    min-height: 52px;
+  }
+
+  /* Prevent horizontal overflow */
+  .hero-section,
+  .section,
+  .storm-cta {
+    overflow-x: hidden;
+  }
+
+  .service-card-img-wrap {
+    height: 160px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 16 / 10;
   }
 }
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .btn-lg {
-    padding: 14px 28px;
+    padding: 14px 24px;
     font-size: 0.85rem;
   }
 
@@ -1376,18 +1420,25 @@ a.contact-value:hover {
   }
 
   .section-title {
-    font-size: 1.75rem;
+    font-size: 1.65rem;
   }
 
   .hero-desc {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.8;
   }
 
   .service-card-desc,
   .review-text,
   .finance-desc,
   .area-note {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .badge {
+    font-size: 0.6rem;
+    padding: 5px 14px;
   }
 }
 
