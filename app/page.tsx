@@ -47,52 +47,52 @@ export default function Home() {
  desc: 'Comprehensive assessment using drone technology and thermal imaging to detect hidden damage before it becomes costly.',
  price: 'Free',
  icon: '🔍',
- img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80',
+ img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
  },
  {
  title: 'Roof Repair',
  desc: 'Leak repair, shingle replacement, flashing fixes, and storm damage restoration. Same-day service available.',
  price: 'From $299',
  icon: '🔧',
- img: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?w=400&q=80',
+ img: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80',
  },
  {
  title: 'Full Replacement',
  desc: 'Complete tear-off and installation with premium materials. 50-year warranty on all new roofs.',
  price: 'From $8,999',
  icon: '🏠',
- img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=80',
+ img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
  },
  {
  title: 'Gutter Systems',
  desc: 'Seamless gutter installation, cleaning, and leaf guard systems to protect your foundation.',
  price: 'From $599',
  icon: '🏗️',
- img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&q=80',
+ img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80',
  },
  {
  title: 'Siding Installation',
  desc: 'Vinyl, fiber cement, and wood siding installation and repair. Boost curb appeal and energy efficiency.',
  price: 'From $3,499',
  icon: '🧱',
- img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80',
+ img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
  },
  {
  title: 'Emergency Tarp',
  desc: '24/7 emergency response for storm damage. Temporary protection within 2 hours of your call.',
  price: 'From $399',
  icon: '🚨',
- img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400&q=80',
+ img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
  },
  ];
 
  const gallery = [
- { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80', label: 'Residential Re-Roof', alt: 'Completed residential roof replacement' },
- { src: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?w=600&q=80', label: 'Commercial Flat Roof', alt: 'Commercial flat roof installation' },
- { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80', label: 'Storm Damage Repair', alt: 'Storm damage roof repair' },
- { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80', label: 'Siding & Gutters', alt: 'New siding and gutter installation' },
- { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80', label: 'Gutter System', alt: 'Seamless gutter system installation' },
- { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80', label: 'Tile Roof Restoration', alt: 'Tile roof restoration project' },
+ { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80', label: 'Residential Re-Roof', alt: 'Completed residential roof replacement' },
+ { src: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80', label: 'Commercial Flat Roof', alt: 'Commercial flat roof installation' },
+ { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80', label: 'Storm Damage Repair', alt: 'Storm damage roof repair' },
+ { src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80', label: 'Siding & Gutters', alt: 'New siding and gutter installation' },
+ { src: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80', label: 'Gutter System', alt: 'Seamless gutter system installation' },
+ { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80', label: 'Tile Roof Restoration', alt: 'Tile roof restoration project' },
  ];
 
  const testimonials = [
@@ -237,7 +237,7 @@ export default function Home() {
  <div className="hero-image reveal-scale">
  <div className="hero-img-card">
  <img
- src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=600&q=80"
+ src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80"
  alt="Professional roofing work on a residential home"
  />
  </div>
@@ -316,7 +316,7 @@ export default function Home() {
  <div className="about-grid">
  <div className="about-img-wrap reveal-left">
  <img
- src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80"
+ src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
  alt="Skyline Roofing team at work on a residential project"
  />
  </div>
