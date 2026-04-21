@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
@@ -340,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -408,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -488,7 +488,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .storm-cta-inner {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -1073,7 +1073,7 @@ a.contact-value:hover {
 }
 
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
