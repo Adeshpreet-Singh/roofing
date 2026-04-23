@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Skyline Roofing | Licensed Roofing Contractors | Free Inspection",
   description:
-    "Skyline Roofing — expert roof inspection, repair, replacement, gutter systems, and siding. Licensed, insured, GAF Master Elite certified. 50-year warranty. Call (555) 456-ROOF for a free inspection.",
+    "Skyline Roofing — expert roof inspection, repair, replacement, gutter systems, and siding. Licensed, insured, GAF Master Elite certified. 50-year warranty. Call [PHONE] for a free inspection.",
   keywords: [
     "roofing contractor",
     "roof repair",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Skyline Roofing | Licensed Roofing Contractors",
     description:
-      "Expert roofing services backed by 50-year warranties. Free inspections, financing available. Call (555) 456-ROOF.",
-    url: "https://skylineroofing.com",
+      "Expert roofing services backed by 50-year warranties. Free inspections, financing available. Call [PHONE].",
+    url: "[WEBSITE]",
     siteName: "Skyline Roofing",
     images: [
       {
@@ -69,7 +69,7 @@ export default function RootLayout({
         {/* Emergency storm damage banner */}
         <div className="emergency-banner" role="alert">
           ⚠ STORM DAMAGE? Call our 24/7 emergency line:{" "}
-          <a href="tel:+15554567663">(555) 456-ROOF</a>
+          <a href="tel:[PHONE]">[PHONE]</a>
         </div>
 
         {children}
