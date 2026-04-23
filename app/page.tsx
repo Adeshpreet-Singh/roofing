@@ -153,7 +153,7 @@ export default function Home() {
  {item}
  </button>
  ))}
- <a href="tel:[PHONE]" className="btn-primary nav-cta">
+ <a href="tel:+91 98765 43210" className="btn-primary nav-cta">
  Free Inspection
  </a>
  </div>
@@ -185,7 +185,7 @@ export default function Home() {
  {item}
  </button>
  ))}
- <a href="tel:[PHONE]" className="btn-primary w-full text-center">
+ <a href="tel:+91 98765 43210" className="btn-primary w-full text-center">
  Free Inspection
  </a>
  </div>
@@ -212,10 +212,10 @@ export default function Home() {
  replacements, we&apos;ve got you covered — rain or shine.
  </p>
  <div className="hero-ctas reveal stagger-3">
- <a href="tel:[PHONE]" className="btn-primary btn-lg">
+ <a href="tel:+91 98765 43210" className="btn-primary btn-lg">
  Free Inspection
  </a>
- <a href="tel:[PHONE]" className="btn-outline btn-lg">
+ <a href="tel:+91 98765 43210" className="btn-outline btn-lg">
  Emergency: 24/7
  </a>
  </div>
@@ -255,8 +255,8 @@ export default function Home() {
  Don&apos;t wait — water damage spreads fast. Our emergency crew responds within 2 hours, day or night.
  </p>
  </div>
- <a href="tel:[PHONE]" className="btn-primary btn-lg storm-cta-btn">
- Call Now: [PHONE]
+ <a href="tel:+91 98765 43210" className="btn-primary btn-lg storm-cta-btn">
+ Call Now: +91 98765 43210
  </a>
  </div>
  </section>
@@ -369,7 +369,7 @@ export default function Home() {
  ))}
  </div>
  <div className="section-cta reveal">
- <a href="tel:[PHONE]" className="btn-outline">
+ <a href="tel:+91 98765 43210" className="btn-outline">
  Ask About Financing
  </a>
  </div>
@@ -433,7 +433,7 @@ export default function Home() {
  ))}
  </div>
  <p className="area-note">
- Don&apos;t see your area? <a href="tel:[PHONE]">Call us</a> — we likely serve your neighborhood.
+ Don&apos;t see your area? <a href="tel:+91 98765 43210">Call us</a> — we likely serve your neighborhood.
  </p>
  </div>
  </div>
@@ -457,14 +457,14 @@ export default function Home() {
  <div className="contact-icon" aria-hidden="true"></div>
  <div>
  <p className="contact-label">24/7 Emergency Line</p>
- <a href="tel:[PHONE]" className="contact-value">[PHONE]</a>
+ <a href="tel:+91 98765 43210" className="contact-value">+91 98765 43210</a>
  </div>
  </div>
  <div className="contact-item">
  <div className="contact-icon" aria-hidden="true"></div>
  <div>
  <p className="contact-label">Email Us</p>
- <a href="mailto:[EMAIL]" className="contact-value">[EMAIL]</a>
+ <a href="mailto:contact@example.com" className="contact-value">contact@example.com</a>
  </div>
  </div>
  <div className="contact-item">
@@ -492,7 +492,7 @@ export default function Home() {
  <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">IG</a>
  <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="social-link">X</a>
  <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">LI</a>
- <a href="https://wa.me/[PHONE]" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-link">WA</a>
+ <a href="https://wa.me/+91 98765 43210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-link">WA</a>
  </div>
  </div>
 
@@ -511,7 +511,7 @@ export default function Home() {
  </div>
  <div className="form-field">
  <label htmlFor="phone">Phone</label>
- <input id="phone" name="phone" type="tel" required placeholder="[PHONE]" />
+ <input id="phone" name="phone" type="tel" required placeholder="+91 98765 43210" />
  </div>
  <div className="form-field">
  <label htmlFor="service-type">Service Needed</label>
@@ -537,7 +537,7 @@ export default function Home() {
  {formStatus === 'sending' ? 'Sending...' : formStatus === 'sent' ? ' Sent! We\'ll call you soon.' : 'Schedule Free Inspection'}
  </button>
  {formStatus === 'error' && (
- <p className="form-error">Something went wrong. Please call us at [PHONE].</p>
+ <p className="form-error">Something went wrong. Please call us at +91 98765 43210.</p>
  )}
  </form>
  </div>
@@ -553,10 +553,10 @@ export default function Home() {
  Get a free, no-obligation roof inspection from our certified experts today.
  </p>
  <div className="final-cta-buttons">
- <a href="tel:[PHONE]" className="btn-primary btn-lg">
- Call [PHONE]
+ <a href="tel:+91 98765 43210" className="btn-primary btn-lg">
+ Call +91 98765 43210
  </a>
- <a href="mailto:[EMAIL]" className="btn-outline btn-lg">
+ <a href="mailto:contact@example.com" className="btn-outline btn-lg">
  Email Us
  </a>
  </div>
@@ -573,9 +573,9 @@ export default function Home() {
  <span className="footer-name">Skyline Roofing</span>
  </div>
  <div className="footer-links">
- <a href="tel:[PHONE]" className="footer-link">[PHONE]</a>
- <a href="mailto:[EMAIL]" className="footer-link">[EMAIL]</a>
- <a href="https://wa.me/[PHONE]" target="_blank" rel="noopener noreferrer" className="footer-link">WhatsApp</a>
+ <a href="tel:+91 98765 43210" className="footer-link">+91 98765 43210</a>
+ <a href="mailto:contact@example.com" className="footer-link">contact@example.com</a>
+ <a href="https://wa.me/+91 98765 43210" target="_blank" rel="noopener noreferrer" className="footer-link">WhatsApp</a>
  </div>
  <div className="footer-social">
  <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">FB</a>
