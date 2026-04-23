@@ -1,3 +1,12 @@
+/* FONTS_INJECTED */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+:root {
+  --font-heading: 'Inter', serif;
+  --font-body: 'Inter', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+body { font-family: var(--font-body); }
+
 /* SKYLINE ROOFING — Bold Professional Design System */
 /* Fonts: Teko (headings) + Roboto (body) */
 /* Colors: Black #0a0a0a, Amber #ff9500 */
@@ -9,27 +18,13 @@
 /* CSS CUSTOM PROPERTIES     */
 /* ========================= */
 :root {
-  --accent: #ff9500;
-  --accent-rgb: 255, 149, 0;
-  --accent-dark: #e08600;
-  --bg: #0a0a0a;
-  --surface: #111111;
-  --card: #141414;
-  --card-hover: #1a1a1a;
-  --border: #222222;
-  --text: #f5f5f5;
-  --text-secondary: #cccccc;
-  --text-muted: #b3b3b3;
-  --heading: #ffffff;
-  --gradient-accent: linear-gradient(135deg, #ff9500, #ffb84d);
-  --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
-  --glow: 0 0 20px rgba(255, 149, 0, 0.35);
-  --glow-lg: 0 0 40px rgba(255, 149, 0, 0.25), 0 0 80px rgba(255, 149, 0, 0.1);
-  --font-heading: 'Teko', sans-serif;
-  --font-body: 'Roboto', sans-serif;
-  --radius: 6px;
-  --radius-lg: 12px;
-  --radius-xl: 20px;
+  --primary: #374151;
+  --secondary: #4b5563;
+  --accent: #f59e0b;
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
 }
 
 /* ========================= */
@@ -1157,8 +1152,8 @@ a.contact-value:hover {
 /* REVEAL ANIMATIONS         */
 /* ========================= */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -1168,8 +1163,8 @@ a.contact-value:hover {
 }
 
 .reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
+  opacity: 1;
+  transform: translateX(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
@@ -1500,3 +1495,13 @@ section, .section { margin-bottom: 0; }
 .vt-md { margin-top: 2.5rem; margin-bottom: 2.5rem; }
 .vt-lg { margin-top: 4rem; margin-bottom: 4rem; }
 .vt-xl { margin-top: 5rem; margin-bottom: 5rem; }
+/* DESIGN_SYSTEM_INJECTED */
+body {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+.bg-primary { background-color: #374151 !important; }
+.bg-secondary { background-color: #4b5563 !important; }
+.text-primary { color: #374151 !important; }
+.text-accent { color: #f59e0b !important; }
+.bg-accent { background-color: #f59e0b !important; }

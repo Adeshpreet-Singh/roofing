@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Skyline Roofing",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1200&q=80",
+        url: "/images/photo-1632759145351-1d592919f522.jpg",
         width: 1200,
         height: 630,
         alt: "Skyline Roofing — professional roof installation",
@@ -39,10 +39,15 @@ export const metadata: Metadata = {
     description:
       "Expert roofing services — inspection, repair, replacement. 50-year warranty. Free inspections.",
     images: [
-      "https://images.unsplash.com/photo-1632759145351-1d592919f522?w=1200&q=80",
+      "/images/photo-1632759145351-1d592919f522.jpg",
     ],
   },
   robots: { index: true, follow: true },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
