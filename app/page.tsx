@@ -46,42 +46,42 @@ export default function Home() {
  title: 'Roof Inspection',
  desc: 'Comprehensive assessment using drone technology and thermal imaging to detect hidden damage before it becomes costly.',
  price: 'Free',
- icon: '🔍',
+ icon: '',
  img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
  },
  {
  title: 'Roof Repair',
  desc: 'Leak repair, shingle replacement, flashing fixes, and storm damage restoration. Same-day service available.',
  price: 'From $299',
- icon: '🔧',
+ icon: '',
  img: 'https://images.unsplash.com/photo-1632759145351-1d592919f522?w=800&q=80',
  },
  {
  title: 'Full Replacement',
  desc: 'Complete tear-off and installation with premium materials. 50-year warranty on all new roofs.',
  price: 'From $8,999',
- icon: '🏠',
+ icon: '',
  img: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80',
  },
  {
  title: 'Gutter Systems',
  desc: 'Seamless gutter installation, cleaning, and leaf guard systems to protect your foundation.',
  price: 'From $599',
- icon: '🏗️',
+ icon: '️',
  img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80',
  },
  {
  title: 'Siding Installation',
  desc: 'Vinyl, fiber cement, and wood siding installation and repair. Boost curb appeal and energy efficiency.',
  price: 'From $3,499',
- icon: '🧱',
+ icon: '',
  img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
  },
  {
  title: 'Emergency Tarp',
  desc: '24/7 emergency response for storm damage. Temporary protection within 2 hours of your call.',
  price: 'From $399',
- icon: '🚨',
+ icon: '',
  img: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
  },
  ];
@@ -135,7 +135,7 @@ export default function Home() {
  <nav role="navigation" aria-label="Main navigation" className="nav-sticky">
  <div className="nav-inner">
  <div className="flex items-center gap-3">
- <div className="nav-logo" aria-hidden="true">🏠</div>
+ <div className="nav-logo" aria-hidden="true"></div>
  <div>
  <h1 className="nav-brand">Skyline</h1>
  <p className="nav-sub">ROOFING</p>
@@ -216,7 +216,7 @@ export default function Home() {
  ☎ Free Inspection
  </a>
  <a href="tel:+15554567663" className="btn-outline btn-lg">
- 🚨 Emergency: 24/7
+  Emergency: 24/7
  </a>
  </div>
  <div className="hero-stats reveal stagger-3">
@@ -256,7 +256,7 @@ export default function Home() {
  </p>
  </div>
  <a href="tel:+15554567663" className="btn-primary btn-lg storm-cta-btn">
- 🚨 Call Now: (555) 456-ROOF
+  Call Now: (555) 456-ROOF
  </a>
  </div>
  </section>
@@ -454,7 +454,7 @@ export default function Home() {
  <div className="contact-grid">
  <div className="contact-info reveal-left">
  <div className="contact-item">
- <div className="contact-icon" aria-hidden="true">📞</div>
+ <div className="contact-icon" aria-hidden="true"></div>
  <div>
  <p className="contact-label">24/7 Emergency Line</p>
  <a href="tel:+15554567663" className="contact-value">(555) 456-ROOF</a>
@@ -468,14 +468,14 @@ export default function Home() {
  </div>
  </div>
  <div className="contact-item">
- <div className="contact-icon" aria-hidden="true">📍</div>
+ <div className="contact-icon" aria-hidden="true"></div>
  <div>
  <p className="contact-label">Office Location</p>
  <p className="contact-value">123 Skyline Dr, Suite 100<br />Metro City, ST 10001</p>
  </div>
  </div>
  <div className="contact-item">
- <div className="contact-icon" aria-hidden="true">🕐</div>
+ <div className="contact-icon" aria-hidden="true"></div>
  <div>
  <p className="contact-label">Business Hours</p>
  <p className="contact-value">
@@ -569,7 +569,7 @@ export default function Home() {
  <div className="footer-inner">
  <div className="footer-top">
  <div className="footer-brand">
- <div className="footer-logo" aria-hidden="true">🏠</div>
+ <div className="footer-logo" aria-hidden="true"></div>
  <span className="footer-name">Skyline Roofing</span>
  </div>
  <div className="footer-links">
