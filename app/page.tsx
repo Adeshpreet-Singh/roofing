@@ -20,7 +20,7 @@ export default function Home() {
  setFormStatus('sending');
  const form = e.currentTarget;
  const formData = new FormData(form);
- formData.append('access_key', '[WEB3FORMS_KEY]');
+ formData.append('access_key', '00000000-0000-0000-0000-000000000000');
 
  try {
  const res = await fetch('https://api.web3forms.com/submit', {
@@ -153,7 +153,7 @@ export default function Home() {
  {item}
  </button>
  ))}
- <a href="tel:+91 98765 43210" className="btn-primary nav-cta">
+ <a href="tel:+1-800-555-0220" className="btn-primary nav-cta">
  Free Inspection
  </a>
  </div>
@@ -185,7 +185,7 @@ export default function Home() {
  {item}
  </button>
  ))}
- <a href="tel:+91 98765 43210" className="btn-primary w-full text-center">
+ <a href="tel:+1-800-555-0220" className="btn-primary w-full text-center">
  Free Inspection
  </a>
  </div>
@@ -209,13 +209,13 @@ export default function Home() {
  </h2>
  <p className="hero-desc reveal stagger-2">
  Expert roofing services backed by 50-year warranties. From inspections to complete
- replacements, we&apos;ve got you covered — rain or shine.
+ replacements, we've got you covered — rain or shine.
  </p>
  <div className="hero-ctas reveal stagger-3">
- <a href="tel:+91 98765 43210" className="btn-primary btn-lg">
+ <a href="tel:+1-800-555-0220" className="btn-primary btn-lg">
  Free Inspection
  </a>
- <a href="tel:+91 98765 43210" className="btn-outline btn-lg">
+ <a href="tel:+1-800-555-0220" className="btn-outline btn-lg">
  Emergency: 24/7
  </a>
  </div>
@@ -252,11 +252,11 @@ export default function Home() {
  <div className="storm-cta-text">
  <h2 className="storm-cta-title">Storm Damage?</h2>
  <p className="storm-cta-desc">
- Don&apos;t wait — water damage spreads fast. Our emergency crew responds within 2 hours, day or night.
+ Don't wait — water damage spreads fast. Our emergency crew responds within 2 hours, day or night.
  </p>
  </div>
- <a href="tel:+91 98765 43210" className="btn-primary btn-lg storm-cta-btn">
- Call Now: +91 98765 43210
+ <a href="tel:+1-800-555-0220" className="btn-primary btn-lg storm-cta-btn">
+ Call Now: +1-800-555-0220
  </a>
  </div>
  </section>
@@ -355,7 +355,7 @@ export default function Home() {
  <p className="badge reveal">FLEXIBLE PAYMENTS</p>
  <h2 id="financing-heading" className="section-title reveal">Financing Options</h2>
  <p className="section-desc reveal">
- Don&apos;t let budget delay critical roof repairs. We offer flexible financing with approved credit.
+ Don't let budget delay critical roof repairs. We offer flexible financing with approved credit.
  </p>
  </div>
  <div className="finance-grid stagger-children">
@@ -369,7 +369,7 @@ export default function Home() {
  ))}
  </div>
  <div className="section-cta reveal">
- <a href="tel:+91 98765 43210" className="btn-outline">
+ <a href="tel:+1-800-555-0220" className="btn-outline">
  Ask About Financing
  </a>
  </div>
@@ -391,7 +391,7 @@ export default function Home() {
  <span key={j} aria-hidden="true"></span>
  ))}
  </div>
- <p className="review-text">&ldquo;{t.text}&rdquo;</p>
+ <p className="review-text">"{t.text}"</p>
  <div className="review-author">
  <p className="review-name">{t.name}</p>
  <p className="review-role">{t.role}</p>
@@ -414,7 +414,7 @@ export default function Home() {
  </div>
  <div className="area-content">
  <div className="area-map reveal-left">
- <div className="w-full h-64 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-sm">Map View</div>
+ <div className="w-full h-64 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-[#666] text-sm">Map View</div>
  </div>
  <div className="area-list reveal">
  <h3 className="area-list-title">Communities We Serve</h3>
@@ -424,7 +424,7 @@ export default function Home() {
  ))}
  </div>
  <p className="area-note">
- Don&apos;t see your area? <a href="tel:+91 98765 43210">Call us</a> — we likely serve your neighborhood.
+ Don't see your area? <a href="tel:+1-800-555-0220">Call us</a> — we likely serve your neighborhood.
  </p>
  </div>
  </div>
@@ -448,7 +448,7 @@ export default function Home() {
  <div className="contact-icon" aria-hidden="true"></div>
  <div>
  <p className="contact-label">24/7 Emergency Line</p>
- <a href="tel:+91 98765 43210" className="contact-value">+91 98765 43210</a>
+ <a href="tel:+1-800-555-0220" className="contact-value">+1-800-555-0220</a>
  </div>
  </div>
  <div className="contact-item">
@@ -479,11 +479,11 @@ export default function Home() {
 
  {/* Social links */}
  <div className="social-links">
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">FB</a>
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">IG</a>
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="social-link">X</a>
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">LI</a>
- <a href="https://wa.me/+91 98765 43210" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-link">WA</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">FB</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">IG</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="social-link">X</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">LI</a>
+ <a href="https://wa.me/+1-800-555-0220" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-link">WA</a>
  </div>
  </div>
 
@@ -502,7 +502,7 @@ export default function Home() {
  </div>
  <div className="form-field">
  <label htmlFor="phone">Phone</label>
- <input id="phone" name="phone" type="tel" required placeholder="+91 98765 43210" />
+ <input id="phone" name="phone" type="tel" required placeholder="+1-800-555-0220" />
  </div>
  <div className="form-field">
  <label htmlFor="service-type">Service Needed</label>
@@ -528,7 +528,7 @@ export default function Home() {
  {formStatus === 'sending' ? 'Sending...' : formStatus === 'sent' ? ' Sent! We\'ll call you soon.' : 'Schedule Free Inspection'}
  </button>
  {formStatus === 'error' && (
- <p className="form-error">Something went wrong. Please call us at +91 98765 43210.</p>
+ <p className="form-error">Something went wrong. Please call us at +1-800-555-0220.</p>
  )}
  </form>
  </div>
@@ -544,8 +544,8 @@ export default function Home() {
  Get a free, no-obligation roof inspection from our certified experts today.
  </p>
  <div className="final-cta-buttons">
- <a href="tel:+91 98765 43210" className="btn-primary btn-lg">
- Call +91 98765 43210
+ <a href="tel:+1-800-555-0220" className="btn-primary btn-lg">
+ Call +1-800-555-0220
  </a>
  <a href="mailto:contact@example.com" className="btn-outline btn-lg">
  Email Us
@@ -564,22 +564,22 @@ export default function Home() {
  <span className="footer-name">Skyline Roofing</span>
  </div>
  <div className="footer-links">
- <a href="tel:+91 98765 43210" className="footer-link">+91 98765 43210</a>
+ <a href="tel:+1-800-555-0220" className="footer-link">+1-800-555-0220</a>
  <a href="mailto:contact@example.com" className="footer-link">contact@example.com</a>
- <a href="https://wa.me/+91 98765 43210" target="_blank" rel="noopener noreferrer" className="footer-link">WhatsApp</a>
+ <a href="https://wa.me/+1-800-555-0220" target="_blank" rel="noopener noreferrer" className="footer-link">WhatsApp</a>
  </div>
  <div className="footer-social">
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">FB</a>
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">IG</a>
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="social-link">X</a>
- <a href="[WEBSITE]" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">LI</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-link">FB</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link">IG</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" className="social-link">X</a>
+ <a href="https://roofing.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link">LI</a>
  </div>
  </div>
  <div className="footer-certs">
  Licensed & Insured | GAF Master Elite | NRCA Member
  </div>
  <div className="footer-bottom">
- <p>&copy; 2025 Skyline Roofing. All rights reserved. Contractor License #RC-2005-3341</p>
+ <p>© 2025 Skyline Roofing. All rights reserved. Contractor License #RC-2005-3341</p>
 <div className="text-center py-3 text-xs opacity-50 hover:opacity-80 transition-opacity"><span>Designed by </span><a href="https://adeshpreet.vercel.app/" target="_blank" rel="noopener noreferrer" className="underline">Adeshpreet Singh</a></div>
  </div>
  </div>
